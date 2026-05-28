@@ -117,16 +117,16 @@
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
               </svg>
-              <span id="lang-label">EN</span>
+              <span id="lang-label">VI</span>
               <svg id="lang-chevron" class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path d="M6 9l6 6 6-6"/>
               </svg>
             </button>
             <div id="lang-dropdown" class="lang-dropdown" role="listbox">
-              <div class="lang-option" data-lang="EN" role="option" tabindex="0">🇺🇸 English</div>
-              <div class="lang-option" data-lang="VI" role="option" tabindex="0">🇻🇳 Tiếng Việt</div>
-              <div class="lang-option" data-lang="KO" role="option" tabindex="0">🇰🇷 한국어</div>
-              <div class="lang-option" data-lang="ZH" role="option" tabindex="0">🇨🇳 中文</div>
+              <div class="lang-option" data-lang="EN" data-langcode="en" role="option" tabindex="0">🇺🇸 English</div>
+              <div class="lang-option" data-lang="VI" data-langcode="vi" role="option" tabindex="0">🇻🇳 Tiếng Việt</div>
+              <div class="lang-option" data-lang="KO" data-langcode="ko" role="option" tabindex="0">🇰🇷 한국어</div>
+              <div class="lang-option" data-lang="ZH" data-langcode="zh-CN" role="option" tabindex="0">🇨🇳 中文</div>
             </div>
           </div>
 
@@ -358,25 +358,25 @@
             <!-- SVG connection lines (behind everything) -->
             <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 700 420" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
               <!-- Outer circle ring -->
-              <circle cx="350" cy="210" r="155" fill="none" stroke="#dbeafe" stroke-width="1.2" stroke-dasharray="6 4"/>
-              <circle cx="350" cy="210" r="195" fill="none" stroke="#eff6ff" stroke-width="1" stroke-dasharray="4 6"/>
+              <circle class="spin-slow-reverse" cx="350" cy="210" r="155" fill="none" stroke="#dbeafe" stroke-width="1.2" stroke-dasharray="6 4"/>
+              <circle class="spin-slow" cx="350" cy="210" r="195" fill="none" stroke="#eff6ff" stroke-width="1" stroke-dasharray="4 6"/>
               <!-- Lines: center to each node -->
-              <line x1="350" y1="210" x2="140" y2="82"  stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
-              <line x1="350" y1="210" x2="140" y2="340" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
-              <line x1="350" y1="210" x2="562" y2="82"  stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
-              <line x1="350" y1="210" x2="562" y2="340" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
+              <line class="dash-flow" x1="350" y1="210" x2="140" y2="82"  stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
+              <line class="dash-flow" x1="350" y1="210" x2="140" y2="340" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
+              <line class="dash-flow" x1="350" y1="210" x2="562" y2="82"  stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
+              <line class="dash-flow" x1="350" y1="210" x2="562" y2="340" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
               <!-- Cross lines between nodes -->
-              <line x1="140" y1="82"  x2="562" y2="82"  stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.5"/>
-              <line x1="140" y1="340" x2="562" y2="340" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.5"/>
-              <line x1="140" y1="82"  x2="140" y2="340" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.5"/>
-              <line x1="562" y1="82"  x2="562" y2="340" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.5"/>
+              <line class="dash-flow" x1="140" y1="82"  x2="562" y2="82"  stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.5"/>
+              <line class="dash-flow" x1="140" y1="340" x2="562" y2="340" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.5"/>
+              <line class="dash-flow" x1="140" y1="82"  x2="140" y2="340" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.5"/>
+              <line class="dash-flow" x1="562" y1="82"  x2="562" y2="340" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.5"/>
               <!-- Dot accents on lines -->
-              <circle cx="245" cy="146" r="3" fill="#3b82f6" opacity="0.5"/>
-              <circle cx="455" cy="146" r="3" fill="#3b82f6" opacity="0.5"/>
-              <circle cx="245" cy="274" r="3" fill="#3b82f6" opacity="0.5"/>
-              <circle cx="455" cy="274" r="3" fill="#3b82f6" opacity="0.5"/>
-              <circle cx="350" cy="55"  r="3" fill="#e02424" opacity="0.45"/>
-              <circle cx="350" cy="365" r="3" fill="#e02424" opacity="0.45"/>
+              <circle class="pulse-dot" style="animation-delay: 0s;" cx="245" cy="146" r="3" fill="#3b82f6" opacity="0.5"/>
+              <circle class="pulse-dot" style="animation-delay: 0.5s;" cx="455" cy="146" r="3" fill="#3b82f6" opacity="0.5"/>
+              <circle class="pulse-dot" style="animation-delay: 1s;" cx="245" cy="274" r="3" fill="#3b82f6" opacity="0.5"/>
+              <circle class="pulse-dot" style="animation-delay: 1.5s;" cx="455" cy="274" r="3" fill="#3b82f6" opacity="0.5"/>
+              <circle class="pulse-dot" style="animation-delay: 0.2s;" cx="350" cy="55"  r="3" fill="#e02424" opacity="0.45"/>
+              <circle class="pulse-dot" style="animation-delay: 0.7s;" cx="350" cy="365" r="3" fill="#e02424" opacity="0.45"/>
             </svg>
 
             <!-- CENTER: AG Logo -->
@@ -1081,5 +1081,24 @@
 
   <!-- External JS (deferred — runs after DOM ready) -->
   <script src="main.js" defer></script>
+
+  <!-- Google Translate -->
+  <div id="google_translate_element" style="display: none;"></div>
+  <script type="text/javascript">
+    // Thiết lập ngôn ngữ mặc định là Tiếng Việt nếu người dùng chưa chọn
+    if (document.cookie.indexOf('googtrans') === -1) {
+      document.cookie = "googtrans=/auto/vi; path=/";
+      document.cookie = "googtrans=/auto/vi; domain=" + location.hostname + "; path=/";
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'auto',
+        includedLanguages: 'en,vi,ko,zh-CN',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 </body>
 </html>

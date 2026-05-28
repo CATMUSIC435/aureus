@@ -72,7 +72,8 @@ $(function () {
   /* — Ecosystem — */
   gsap.from('.eco-left',        { x: -50, opacity: 0, duration: 0.8,  scrollTrigger: st('#ecosystem', 'top 75%') });
   gsap.from('.eco-center-logo', { scale: 0.6, opacity: 0, duration: 0.9, ease: EASE_BACK, scrollTrigger: st('#ecosystem', 'top 72%') });
-  gsap.from('.eco-node',        { opacity: 0, y: 20, stagger: 0.12, duration: 0.6, scrollTrigger: st('#ecosystem', 'top 65%') });
+  gsap.from('.eco-diagram > svg', { opacity: 0, duration: 1.5, delay: 0.4, scrollTrigger: st('#ecosystem', 'top 70%') });
+  gsap.from('.eco-node',        { opacity: 0, scale: 0.8, stagger: 0.15, duration: 0.7, ease: EASE_BACK, scrollTrigger: st('#ecosystem', 'top 65%') });
 
   /* — Stats Ticker — */
   gsap.from('.ticker-item', { y: 20, opacity: 0, stagger: 0.1, duration: 0.5, ease: 'power2.out', scrollTrigger: st('#stats', 'top 88%') });
@@ -222,10 +223,20 @@ $(function () {
     });
 
     $('.lang-option').on('click', function () {
-      $langLabel.text($(this).data('lang'));
+      const selectedLang = $(this).data('lang');
+      const langCode = $(this).data('langcode');
+      
+      $langLabel.text(selectedLang);
       $langDropdown.removeClass('open');
       $langChevron.css('transform', 'rotate(0deg)');
       $langBtn.attr('aria-expanded', 'false');
+
+      // Trigger Google Translate
+      const googleSelect = document.querySelector('.goog-te-combo');
+      if (googleSelect && langCode) {
+        googleSelect.value = langCode;
+        googleSelect.dispatchEvent(new Event('change'));
+      }
     });
 
     /* Close on outside click */

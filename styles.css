@@ -168,6 +168,38 @@ header.scrolled {
   line-height: 1.5;
 }
 
+/* ── Ecosystem Continuous Animations ── */
+@keyframes dashFlow {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+.dash-flow {
+  animation: dashFlow 1.5s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow {
+  animation: spinSlow 40s linear infinite;
+  transform-origin: 350px 210px; /* Center of SVG viewBox */
+}
+.spin-slow-reverse {
+  animation: spinSlow 50s linear reverse infinite;
+  transform-origin: 350px 210px;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.8); opacity: 0.9; }
+}
+.pulse-dot {
+  animation: pulseDot 2s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
 /* ══════════════════ STATS TICKER BAR ══════════════════ */
 .stats-ticker {
   background: var(--color-white);
@@ -965,3 +997,13 @@ header.scrolled {
   .ticker-item::after { display: none !important; }
   .ticker-item { border-bottom: 1px solid var(--color-gray-border); }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   GOOGLE TRANSLATE OVERRIDES
+═══════════════════════════════════════════════════════════════ */
+body { top: 0px !important; }
+.skiptranslate { display: none !important; }
+.goog-te-banner-frame { display: none !important; }
+.goog-tooltip { display: none !important; }
+.goog-tooltip:hover { display: none !important; }
+.goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
