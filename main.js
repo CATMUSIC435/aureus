@@ -308,11 +308,19 @@ $(function () {
      12. Smooth scroll for anchor links
   ════════════════════════════════════════════════════ */
   $(document).on('click', 'a[href^="#"]', function (e) {
-    const href   = $(this).attr('href');
-    const $target = $(href);
-    if ($target.length) {
+    const href = $(this).attr('href');
+    if (href === '#') {
       e.preventDefault();
-      $('html, body').animate({ scrollTop: $target.offset().top - 80 }, 600);
+      return;
+    }
+    try {
+      const $target = $(href);
+      if ($target.length) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: $target.offset().top - 80 }, 600);
+      }
+    } catch (err) {
+      // Ignore invalid selectors
     }
   });
 
