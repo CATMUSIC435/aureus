@@ -125,7 +125,7 @@ header.scrolled {
 }
 
 /* ══════════════════ ECOSYSTEM SECTION ══════════════════ */
-.eco-node { width: 11.875rem; }
+.eco-node { width: 13.5rem; }
 .eco-node-inner {
   display: flex;
   align-items: flex-start;
