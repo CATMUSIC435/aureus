@@ -1379,6 +1379,17 @@ header.scrolled {
     height: 280px !important;
     opacity: 1;
   }
+  /* Make spinning circles visible on mobile (stroke colors are too light by default) */
+  .eco-diagram > svg circle.spin-slow-reverse {
+    stroke: #93c5fd !important;
+    stroke-width: 1.8 !important;
+    opacity: 0.7;
+  }
+  .eco-diagram > svg circle.spin-slow {
+    stroke: #bfdbfe !important;
+    stroke-width: 1.4 !important;
+    opacity: 0.55;
+  }
   /* Hide lines & dots on mobile (they point to desktop positions) — keep only circles */
   .eco-diagram > svg line,
   .eco-diagram > svg .dash-flow,
@@ -1409,6 +1420,7 @@ header.scrolled {
     top: auto !important; bottom: auto !important;
     transform: none !important;
     width: auto !important;
+    margin-bottom: 8px;
     display: block;
   }
   /* Create 2-col grid wrapper via parent pseudo layout */
