@@ -26,10 +26,15 @@
 
 * { box-sizing: border-box; }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* ══════════════════ NAVBAR ══════════════════ */
@@ -140,14 +145,17 @@ header.scrolled {
 .eco-node-inner:hover {
   box-shadow: 0 0.375rem 1.5rem rgba(var(--color-primary-rgb),0.14);
   transform: translateY(-2px);
+  border-radius: 0.625rem 0.625rem 0 0;
+  border-bottom-color: transparent;
 }
+
 .eco-node-inner--right {
   flex-direction: row-reverse;
   text-align: right;
 }
 .eco-icon {
   flex-shrink: 0;
-  width: 2.25rem; height: 2.25rem;
+  width: 3rem; height: 3rem;
   border-radius: 0.5rem;
   background: var(--color-blue-50);
   display: flex;
@@ -167,6 +175,93 @@ header.scrolled {
   color: var(--color-gray-500);
   line-height: 1.5;
 }
+
+/* ── Logo icon variant (replaces SVG icon) ── */
+.eco-icon--logo {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.eco-icon--logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+/* ── Hover detail panel ── */
+.eco-node {
+  position: relative;
+}
+.eco-node-detail {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: max-height 0.35s ease, opacity 0.3s ease, transform 0.3s ease;
+  background: #fff;
+  border: 1px solid var(--color-blue-100);
+  border-top: none;
+  border-radius: 0 0 0.625rem 0.625rem;
+  padding: 0 0.875rem;
+  box-shadow: 0 6px 16px rgba(26,86,219,0.09);
+  pointer-events: none;
+}
+.eco-node:hover .eco-node-detail {
+  max-height: 6rem;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+/* Right-aligned variant */
+.eco-node-detail--right {
+  text-align: right;
+}
+/* Top-center node: centered, panel opens downward */
+.eco-node--top-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 13.5rem;
+}
+.eco-node--top-center .eco-node-inner {
+  width: 100%;
+}
+.eco-node--top-center .eco-node-detail {
+  width: 100%;
+}
+/* Center layout for holding node */
+.eco-node-inner--center {
+  flex-direction: row;
+  justify-content: center;
+  text-align: left;
+}
+
+/* Detail content styles */
+.eco-detail-desc {
+  font-size: 0.625rem;
+  color: var(--color-gray-500);
+  line-height: 1.55;
+  padding-top: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+.eco-detail-link {
+  display: inline-block;
+  font-size: 0.5938rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  padding-bottom: 0.5rem;
+  text-decoration: none;
+  transition: letter-spacing 0.2s;
+}
+.eco-detail-link:hover {
+  letter-spacing: 0.14em;
+}
+
+
 
 /* ── Ecosystem Continuous Animations ── */
 @keyframes dashFlow {
@@ -563,6 +658,346 @@ header.scrolled {
   flex-shrink: 0;
 }
 
+/* ══════════════════ NEWS SECTION ══════════════════ */
+.news-section {
+  background: var(--color-bg-light);
+  padding: 5rem 0;
+}
+.news-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.news-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  margin-bottom: 0.375rem;
+}
+.news-section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-gray-900);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.news-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: gap 0.2s;
+}
+.news-view-all:hover { gap: 0.625rem; }
+
+/* Two-column layout */
+.news-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ── Featured article ── */
+.news-featured {
+  background: transparent;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 4px 24px rgba(26,86,219,0.10), 0 1.5px 6px rgba(26,86,219,0.06);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.news-featured:hover {
+  box-shadow: 0 12px 40px rgba(26,86,219,0.16), 0 3px 10px rgba(26,86,219,0.09);
+  transform: translateY(-3px);
+}
+.news-featured-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+.news-featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.news-featured:hover .news-featured-img { transform: scale(1.04); }
+.news-featured-body {
+  padding: 1.5rem 1.75rem 1.75rem;
+  backdrop-filter: blur(8px);
+}
+.news-date {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.6875rem;
+  color: var(--color-gray-400);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.news-featured-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  line-height: 1.45;
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.01em;
+}
+.news-featured-excerpt {
+  font-size: 0.8125rem;
+  color: var(--color-gray-500);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.news-featured-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+.news-featured-cta:hover { gap: 0.625rem; }
+
+/* ── News badge ── */
+.news-badge {
+  position: absolute;
+  top: 0.875rem;
+  left: 0.875rem;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.5938rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.625rem;
+  border-radius: 2rem;
+}
+.news-badge--sm {
+  position: static;
+  display: inline-block;
+  font-size: 0.5625rem;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.4rem;
+  background: var(--color-blue-50);
+  color: var(--color-primary);
+  border-radius: 2rem;
+}
+
+/* ── News list (right col) ── */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: transparent;
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(26,86,219,0.10), 0 1.5px 6px rgba(26,86,219,0.06);
+}
+.news-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(219,234,254,0.5);
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.news-list-item:last-child { border-bottom: none; }
+.news-list-item:hover { background: var(--color-bg-light); }
+.news-list-thumb {
+  flex-shrink: 0;
+  width: 5rem;
+  height: 3.75rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.news-list-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.news-list-item:hover .news-list-thumb img { transform: scale(1.08); }
+.news-list-body { flex: 1; min-width: 0; }
+.news-list-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  line-height: 1.45;
+  margin: 0 0 0.3rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.news-list-date {
+  font-size: 0.6563rem;
+  color: var(--color-gray-400);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 63.9375em) {
+  .news-layout { grid-template-columns: 1fr; }
+  .news-featured-img-wrap { height: 200px; }
+}
+@media (max-width: 39.9375em) {
+  .news-section { padding: 3rem 0; }
+  .news-section-title { font-size: 1.5rem; }
+  .news-list-thumb { width: 4rem; height: 3rem; }
+}
+
+/* ══════════════════ PARTNERS MARQUEE SECTION ══════════════════ */
+
+.partners-section {
+  border-top: 1px solid var(--color-blue-50);
+  border-bottom: 1px solid var(--color-blue-50);
+  padding: 3.5rem 0 3rem;
+  overflow: hidden;
+}
+.partners-header {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.5rem;
+}
+.partners-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  margin-bottom: 0.625rem;
+}
+.partners-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-gray-900);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+.partners-sub {
+  font-size: 0.8125rem;
+  color: var(--color-gray-500);
+  line-height: 1.7;
+}
+
+/* Track wrapper: clips overflow and adds edge fade masks */
+.partners-track-wrap {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.875rem;
+}
+.partners-track-wrap::before,
+.partners-track-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 8rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.partners-track-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-white) 0%, transparent 100%);
+}
+.partners-track-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-white) 0%, transparent 100%);
+}
+
+/* The scrolling track */
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  will-change: transform;
+}
+.partners-track--left {
+  animation: partnersLeft 35s linear infinite;
+}
+.partners-track--right {
+  animation: partnersRight 40s linear infinite;
+}
+/* Pause on hover */
+.partners-track-wrap:hover .partners-track {
+  animation-play-state: paused;
+}
+
+@keyframes partnersLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes partnersRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Individual logo card */
+.partner-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 7rem;
+  padding: 0 2.5rem;
+  border-right: 1px solid var(--color-blue-50);
+  transition: background 0.25s;
+}
+.partner-logo-item:hover { background: var(--color-bg-light); }
+.partner-logo-item img {
+  height: 3.5rem;
+  width: auto;
+  max-width: 11rem;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: grayscale(30%);
+  opacity: 0.75;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.partner-logo-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Text-only partner items */
+.partner-text-item span {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-gray-400);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: color 0.25s;
+}
+.partner-text-item:hover span {
+  color: var(--color-primary);
+}
+
+
 /* ══════════════════ GLOBAL BANNER ══════════════════ */
 .global-banner {
   background:var(--color-bg-light);
@@ -685,6 +1120,7 @@ header.scrolled {
   min-height: 100vh;
   background: var(--color-blue-50);
   overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
 }
@@ -845,6 +1281,10 @@ header.scrolled {
 ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 63.9375em) {
 
+  /* ── Ecosystem: tighter nodes on tablet ── */
+  .eco-node { width: 11rem; }
+  .eco-diagram { min-height: 360px; }
+
   /* Stats Ticker: 3 per row on tablet */
   .ticker-track {
     flex-wrap: wrap;
@@ -919,9 +1359,98 @@ header.scrolled {
   /* ── Companies: 1 col ── */
   .co-left { padding-right: 0; margin-bottom: 1.5rem; }
 
-  /* ── Ecosystem: hide SVG network, show nodes stacked ── */
-  .eco-node { width: 100%; }
+  /* ── Ecosystem: compact diagram top + 2-col node grid below ── */
+  .eco-diagram {
+    min-height: auto !important;
+    display: block !important;
+    position: relative !important;
+    padding-top: 280px;
+  }
+
+  /* SVG fills top 280px — override ALL inset-0 sides */
+  .eco-diagram > svg {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    height: 280px !important;
+    opacity: 1;
+  }
+  /* Hide lines & dots on mobile (they point to desktop positions) — keep only circles */
+  .eco-diagram > svg line,
+  .eco-diagram > svg .dash-flow,
+  .eco-diagram > svg .pulse-dot {
+    display: none !important;
+  }
+
+  /* Center logo: centered in 240px area */
+  .eco-center-logo {
+    display: flex !important;
+    position: absolute !important;
+    top: 140px !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 120px !important;
+    height: 120px !important;
+    box-shadow: 0 0 0 8px rgba(219,234,254,0.5), 0 0 0 16px rgba(219,234,254,0.2) !important;
+  }
+  .eco-center-logo img {
+    width: 80px !important;
+  }
+
+  /* Nodes: 2-column grid */
+  .eco-node,
+  .eco-node--top-center {
+    position: relative !important;
+    left: auto !important; right: auto !important;
+    top: auto !important; bottom: auto !important;
+    transform: none !important;
+    width: auto !important;
+    display: block;
+  }
+  /* Create 2-col grid wrapper via parent pseudo layout */
+  .eco-diagram > .eco-node:not(.eco-node--top-center) {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(50% - 0.25rem);
+  }
+  .eco-node--top-center {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Compact node inner on mobile */
+  .eco-node-inner {
+    padding: 0.625rem 0.75rem;
+    gap: 0.5rem;
+    border-radius: 0.625rem 0.625rem 0 0;
+    border-bottom-color: transparent;
+  }
+  .eco-icon--logo img { width: 32px !important; height: 32px !important; }
+  .eco-node-title { font-size: 0.6875rem; }
+  .eco-node-sub { font-size: 0.5625rem; }
+
+  /* Reset right-aligned nodes to left */
   .eco-node-inner--right { flex-direction: row; text-align: left; }
+  .eco-node-inner--center { justify-content: flex-start; }
+
+  /* Detail panels: always open on mobile */
+  .eco-node-detail {
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    border-top: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 0.25rem 0.75rem 0.5rem;
+  }
+  .eco-detail-desc { font-size: 0.5625rem; padding-top: 0.25rem; }
+  .eco-detail-link { font-size: 0.5rem; padding-bottom: 0.375rem; }
+
 
   /* ── Investor Relations: full stack ── */
   .ir-pillars {
