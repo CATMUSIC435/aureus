@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aureus Network</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: radial-gradient(circle at center, #fff 0%, #f7fcff 45%, #eef9ff 100%);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .network {
+      width: min(94vw, 900px);
+      aspect-ratio: 1000 / 780;
+      position: relative;
+    }
+
+    .node {
+      position: absolute;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #fff 0%, #f5fdff 48%, #e5f8ff 100%);
+      box-shadow:
+        inset 0 0 22px rgba(255,255,255,.95),
+        0 0 0 2px rgba(90,175,220,.45),
+        0 16px 32px rgba(32,130,190,.14);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .node::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: inherit;
+      border: 1px solid rgba(83, 178, 225, .35);
+      pointer-events: none;
+    }
+
+    .node-center {
+      width: clamp(150px, 25vw, 250px);
+      height: clamp(150px, 25vw, 250px);
+      z-index: 8;
+    }
+
+    .node-small {
+      width: clamp(90px, 17vw, 165px);
+      height: clamp(90px, 17vw, 165px);
+    }
+
+    .logo-main {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: .85;
+      font-weight: 900;
+      letter-spacing: -7px;
+    }
+
+    .logo-small {
+      font-size: clamp(26px, 5vw, 52px);
+      line-height: .85;
+      font-weight: 900;
+      letter-spacing: -4px;
+    }
+
+    .text-main {
+      margin-top: 8px;
+      font-size: clamp(13px, 3vw, 24px);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .text-small {
+      margin-top: 6px;
+      font-size: clamp(8px, 1.8vw, 16px);
+      font-weight: 900;
+      color: #062b78;
+      line-height: 1.1;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .blue { color: #0059dc; }
+    .red { color: #ff263c; }
+    .orange { color: #ff9b00; }
+
+    .divider {
+      width: 46%;
+      height: 1px;
+      margin-top: 8px;
+      background: rgba(20, 40, 70, .45);
+    }
+
+    .line {
+      stroke: rgba(88, 176, 225, .3);
+      stroke-width: 1.5;
+      filter: drop-shadow(0 0 6px rgba(120,220,255,.55));
+    }
+
+    .ring {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border-radius: 999px;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(90, 185, 235, .28);
+      box-shadow: 0 0 40px rgba(120, 220, 255, .24);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .ring-1 {
+      width: clamp(200px, 33vw, 320px);
+      height: clamp(200px, 33vw, 320px);
+    }
+
+    .ring-2 {
+      width: clamp(165px, 28vw, 270px);
+      height: clamp(165px, 28vw, 270px);
+      opacity: .65;
+    }
+
+    .dot {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #fff 0%, #c8f5ff 45%, transparent 72%);
+      box-shadow: 0 0 20px rgba(90, 215, 255, .9);
+      z-index: 4;
+      transform: translate(-50%, -50%);
+    }
+
+    .tooltip {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 280px;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+      transform: translate3d(20px, 20px, 0) scale(.95);
+      background: rgba(255, 255, 255, .88);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(80, 170, 220, .35);
+      box-shadow:
+        0 20px 45px rgba(20, 95, 150, .18),
+        inset 0 0 18px rgba(255,255,255,.8);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .tooltip-title {
+      font-size: 15px;
+      font-weight: 900;
+      color: #062b78;
+      margin-bottom: 6px;
+    }
+
+    .tooltip-desc {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #334155;
+    }
+
+    .tooltip-tag {
+      display: inline-flex;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(0, 89, 220, .08);
+      color: #0059dc;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 640px) {
+      .network {
+        width: 98vw;
+        aspect-ratio: 1 / 1.05;
+      }
+
+      .node-small {
+        width: 88px;
+        height: 88px;
+      }
+
+      .node-center {
+        width: 140px;
+        height: 140px;
+      }
+
+      .logo-main {
+        font-size: 42px;
+        letter-spacing: -4px;
+      }
+
+      .logo-small {
+        font-size: 27px;
+        letter-spacing: -2px;
+      }
+
+      .text-main {
+        font-size: 13px;
+      }
+
+      .text-small {
+        font-size: 8px;
+      }
+
+      .tooltip {
+        width: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body class="flex items-center justify-center">
+
+  <section class="network">
+
+    <svg class="absolute inset-0 w-full h-full pointer-events-none z-[1]" viewBox="0 0 1000 780" preserveAspectRatio="none">
+      <polygon class="line" points="500,95 180,285 300,630 700,630 820,285" fill="none" />
+
+      <line class="line connect" x1="500" y1="390" x2="500" y2="95" />
+      <line class="line connect" x1="500" y1="390" x2="180" y2="285" />
+      <line class="line connect" x1="500" y1="390" x2="820" y2="285" />
+      <line class="line connect" x1="500" y1="390" x2="300" y2="630" />
+      <line class="line connect" x1="500" y1="390" x2="700" y2="630" />
+    </svg>
+
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+
+    <div class="dot" style="left:50%; top:30%;"></div>
+    <div class="dot" style="left:35%; top:60%;"></div>
+    <div class="dot" style="left:65%; top:60%;"></div>
+
+    <div
+      class="node node-center center-node"
+      style="left:50%; top:50%;"
+      data-title="AUREUS GLOBAL"
+      data-desc="Trung tâm hệ sinh thái, kết nối các công ty thành viên trong chiến lược phát triển công nghệ, đầu tư và vận hành."
+      data-tag="Global Ecosystem"
+    >
+      <div class="logo-main">
+        <span class="blue">A</span><span class="red">G</span>
+      </div>
+      <div class="text-main">
+        <span class="text-[#062b78]">AUREUS</span>
+        <span class="text-[#f32135]">GLOBAL</span>
+      </div>
+    </div>
+
+    <div
+      class="node node-small logo-node"
+      style="left:50%; top:12%;"
+      data-title="AUREUS HOLDING"
+      data-desc="Đơn vị định hướng chiến lược, quản trị đầu tư và phát triển hệ sinh thái doanh nghiệp."
+      data-tag="Holding"
+    >
+      <div class="logo-small">
+        <span class="blue">A</span><span class="red">H</span>
+      </div>
+      <div class="divider"></div>
+      <div class="text-small">AUREUS HOLDING</div>
+    </div>
+
+    <div
+      class="node node-small logo-node"
+      style="left:18%; top:36%;"
+      data-title="AUREUS LAB"
+      data-desc="Không gian nghiên cứu, thử nghiệm sản phẩm, công nghệ mới, AI, dữ liệu và giải pháp số."
+      data-tag="Innovation Lab"
+    >
+      <div class="logo-small">
+        <span class="blue">A</span><span class="red">L</span>
+      </div>
+      <div class="divider"></div>
+      <div class="text-small">AUREUS LAB</div>
+    </div>
+
+    <div
+      class="node node-small logo-node"
+      style="left:82%; top:36%;"
+      data-title="DIP TECH"
+      data-desc="Đơn vị công nghệ phụ trách nền tảng số, phần mềm, tích hợp hệ thống và chuyển đổi số."
+      data-tag="Technology"
+    >
+      <div class="logo-small">
+        <span class="blue">D</span><span class="orange">I</span><span class="blue">P</span>
+      </div>
+      <div class="text-small text-[clamp(13px,2.4vw,24px)]">
+        <span class="text-[#062b78]">DIP</span>
+        <span class="text-[#ff4a22]">TECH</span>
+      </div>
+    </div>
+
+    <div
+      class="node node-small logo-node"
+      style="left:30%; top:80%;"
+      data-title="AUREUS DIGITAL"
+      data-desc="Đơn vị triển khai truyền thông số, thương hiệu, marketing performance và trải nghiệm khách hàng."
+      data-tag="Digital Growth"
+    >
+      <div class="logo-small">
+        <span class="blue">A</span><span class="red">D</span>
+      </div>
+      <div class="text-small">AUREUS DIGITAL</div>
+    </div>
+
+    <div
+      class="node node-small logo-node"
+      style="left:70%; top:80%;"
+      data-title="AUREUS VENTURES"
+      data-desc="Mảng đầu tư, phát triển dự án, tìm kiếm cơ hội tăng trưởng và mở rộng hệ sinh thái."
+      data-tag="Ventures"
+    >
+      <div class="logo-small">
+        <span class="blue">A</span><span class="red">V</span>
+      </div>
+      <div class="text-small">AUREUS VENTURES</div>
+    </div>
+
+  </section>
+
+  <div id="tooltip" class="tooltip">
+    <div id="tooltipTitle" class="tooltip-title"></div>
+    <div id="tooltipDesc" class="tooltip-desc"></div>
+    <div id="tooltipTag" class="tooltip-tag"></div>
+  </div>
+
+  <script>
+    const tooltip = document.getElementById("tooltip");
+    const tooltipTitle = document.getElementById("tooltipTitle");
+    const tooltipDesc = document.getElementById("tooltipDesc");
+    const tooltipTag = document.getElementById("tooltipTag");
+
+    const moveTooltip = (e) => {
+      const padding = 18;
+      const tooltipWidth = tooltip.offsetWidth;
+      const tooltipHeight = tooltip.offsetHeight;
+
+      let x = e.clientX + 22;
+      let y = e.clientY + 22;
+
+      if (x + tooltipWidth > window.innerWidth - padding) {
+        x = e.clientX - tooltipWidth - 22;
+      }
+
+      if (y + tooltipHeight > window.innerHeight - padding) {
+        y = e.clientY - tooltipHeight - 22;
+      }
+
+      gsap.to(tooltip, {
+        x,
+        y,
+        duration: 0.18,
+        ease: "power2.out"
+      });
+    };
+
+    document.querySelectorAll(".node").forEach((node) => {
+      node.addEventListener("mouseenter", (e) => {
+        tooltipTitle.textContent = node.dataset.title;
+        tooltipDesc.textContent = node.dataset.desc;
+        tooltipTag.textContent = node.dataset.tag;
+
+        gsap.to(node, {
+          scale: 1.08,
+          duration: 0.28,
+          ease: "power2.out"
+        });
+
+        gsap.to(tooltip, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.22,
+          ease: "power2.out"
+        });
+
+        moveTooltip(e);
+      });
+
+      node.addEventListener("mousemove", moveTooltip);
+
+      node.addEventListener("mouseleave", () => {
+        gsap.to(node, {
+          scale: 1,
+          duration: 0.28,
+          ease: "power2.out"
+        });
+
+        gsap.to(tooltip, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 0.18,
+          ease: "power2.out"
+        });
+      });
+    });
+
+    gsap.from(".center-node", {
+      scale: 0,
+      opacity: 0,
+      duration: 1.1,
+      ease: "elastic.out(1, 0.65)"
+    });
+
+    gsap.from(".logo-node", {
+      scale: 0,
+      opacity: 0,
+      duration: 0.85,
+      delay: 0.35,
+      stagger: 0.12,
+      ease: "back.out(1.8)"
+    });
+
+    gsap.from(".line", {
+      strokeDasharray: 900,
+      strokeDashoffset: 900,
+      opacity: 0,
+      duration: 1.5,
+      delay: 0.45,
+      ease: "power2.out"
+    });
+
+    gsap.to(".logo-node", {
+      y: -7,
+      duration: 2.2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      stagger: 0.18
+    });
+
+    gsap.to(".center-node", {
+      scale: 1.025,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+
+    gsap.to(".ring-1", {
+      rotate: 360,
+      duration: 32,
+      repeat: -1,
+      ease: "none"
+    });
+
+    gsap.to(".ring-2", {
+      rotate: -360,
+      duration: 38,
+      repeat: -1,
+      ease: "none"
+    });
+
+    gsap.to(".dot", {
+      scale: 1.45,
+      opacity: 0.4,
+      duration: 1.2,
+      repeat: -1,
+      yoyo: true,
+      stagger: 0.25,
+      ease: "sine.inOut"
+    });
+  </script>
+
+</body>
+</html>

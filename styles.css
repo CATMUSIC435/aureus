@@ -1,4 +1,19 @@
 :root {
+  /* Sizing Variables */
+  --space-1: 0.25em;
+  --space-2: 0.5em;
+  --space-3: 0.75em;
+  --space-4: 1em;
+  --space-5: 1.25em;
+  --space-6: 1.5em;
+  --space-8: 2em;
+  --space-10: 2.5em;
+  --space-12: 3em;
+  --space-16: 4em;
+  --space-20: 5em;
+  --space-24: 6em;
+  --space-32: 8em;
+
   --color-primary: #1a56db;
   --color-primary-dark: #1446c0;
   --color-primary-darker: #1e40af;
@@ -183,8 +198,8 @@ header.scrolled {
   padding: 0;
 }
 .eco-icon--logo img {
-  width: 48px;
-  height: 48px;
+  width: var(--space-12);
+  height: var(--space-12);
   object-fit: contain;
   mix-blend-mode: multiply;
   display: block;
@@ -198,14 +213,14 @@ header.scrolled {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transform: translateY(-4px);
+  transform: translateY(-var(--space-1));
   transition: max-height 0.35s ease, opacity 0.3s ease, transform 0.3s ease;
   background: #fff;
   border: 1px solid var(--color-blue-100);
   border-top: none;
   border-radius: 0 0 0.625rem 0.625rem;
   padding: 0 0.875rem;
-  box-shadow: 0 6px 16px rgba(26,86,219,0.09);
+  box-shadow: 0 0.375em var(--space-4) rgba(26,86,219,0.09);
   pointer-events: none;
 }
 .eco-node:hover .eco-node-detail {
@@ -278,11 +293,11 @@ header.scrolled {
 }
 .spin-slow {
   animation: spinSlow 40s linear infinite;
-  transform-origin: 350px 210px; /* Center of SVG viewBox */
+  transform-origin: 21.875em 13.125em; /* Center of SVG viewBox */
 }
 .spin-slow-reverse {
   animation: spinSlow 50s linear reverse infinite;
-  transform-origin: 350px 210px;
+  transform-origin: 21.875em 13.125em;
 }
 
 @keyframes pulseDot {
@@ -716,17 +731,17 @@ header.scrolled {
   border-radius: 1rem;
   overflow: hidden;
   border: none;
-  box-shadow: 0 4px 24px rgba(26,86,219,0.10), 0 1.5px 6px rgba(26,86,219,0.06);
+  box-shadow: 0 var(--space-1) var(--space-6) rgba(26,86,219,0.10), 0 1.5px 0.375em rgba(26,86,219,0.06);
   transition: box-shadow 0.3s, transform 0.3s;
 }
 .news-featured:hover {
-  box-shadow: 0 12px 40px rgba(26,86,219,0.16), 0 3px 10px rgba(26,86,219,0.09);
-  transform: translateY(-3px);
+  box-shadow: 0 var(--space-3) var(--space-10) rgba(26,86,219,0.16), 0 0.1875em 0.625em rgba(26,86,219,0.09);
+  transform: translateY(-0.1875em);
 }
 .news-featured-img-wrap {
   position: relative;
   overflow: hidden;
-  height: 240px;
+  height: 15em;
 }
 .news-featured-img {
   width: 100%;
@@ -737,7 +752,7 @@ header.scrolled {
 .news-featured:hover .news-featured-img { transform: scale(1.04); }
 .news-featured-body {
   padding: 1.5rem 1.75rem 1.75rem;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(var(--space-2));
 }
 .news-date {
   display: flex;
@@ -810,7 +825,7 @@ header.scrolled {
   border: none;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(26,86,219,0.10), 0 1.5px 6px rgba(26,86,219,0.06);
+  box-shadow: 0 var(--space-1) var(--space-6) rgba(26,86,219,0.10), 0 1.5px 0.375em rgba(26,86,219,0.06);
 }
 .news-list-item {
   display: flex;
@@ -819,7 +834,7 @@ header.scrolled {
   padding: 1rem 1.25rem;
   border-bottom: 1px solid rgba(219,234,254,0.5);
   text-decoration: none;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(0.375em);
   transition: background 0.2s;
   cursor: pointer;
 }
@@ -861,7 +876,7 @@ header.scrolled {
 /* ── Responsive ── */
 @media (max-width: 63.9375em) {
   .news-layout { grid-template-columns: 1fr; }
-  .news-featured-img-wrap { height: 200px; }
+  .news-featured-img-wrap { height: 12.5em; }
 }
 @media (max-width: 39.9375em) {
   .news-section { padding: 3rem 0; }
@@ -879,7 +894,7 @@ header.scrolled {
 }
 .partners-header {
   text-align: center;
-  max-width: 520px;
+  max-width: 32.5em;
   margin: 0 auto 2.5rem;
   padding: 0 1.5rem;
 }
@@ -1283,7 +1298,7 @@ header.scrolled {
 
   /* ── Ecosystem: tighter nodes on tablet ── */
   .eco-node { width: 11rem; }
-  .eco-diagram { min-height: 360px; }
+  .eco-diagram { min-height: 22.5em; }
 
   /* Stats Ticker: 3 per row on tablet */
   .ticker-track {
@@ -1364,10 +1379,10 @@ header.scrolled {
     min-height: auto !important;
     display: block !important;
     position: relative !important;
-    padding-top: 280px;
+    padding-top: 17.5em;
   }
 
-  /* SVG fills top 280px — override ALL inset-0 sides */
+  /* SVG fills top 17.5em — override ALL inset-0 sides */
   .eco-diagram > svg {
     display: block !important;
     position: absolute !important;
@@ -1376,7 +1391,7 @@ header.scrolled {
     bottom: auto !important;
     right: auto !important;
     width: 100% !important;
-    height: 280px !important;
+    height: 17.5em !important;
     opacity: 1;
   }
   /* Make spinning circles visible on mobile (stroke colors are too light by default) */
@@ -1397,19 +1412,19 @@ header.scrolled {
     display: none !important;
   }
 
-  /* Center logo: centered in 240px area */
+  /* Center logo: centered in 15em area */
   .eco-center-logo {
     display: flex !important;
     position: absolute !important;
-    top: 140px !important;
+    top: 8.75em !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    width: 120px !important;
-    height: 120px !important;
-    box-shadow: 0 0 0 8px rgba(219,234,254,0.5), 0 0 0 16px rgba(219,234,254,0.2) !important;
+    width: 7.5em !important;
+    height: 7.5em !important;
+    box-shadow: 0 0 0 var(--space-2) rgba(219,234,254,0.5), 0 0 0 var(--space-4) rgba(219,234,254,0.2) !important;
   }
   .eco-center-logo img {
-    width: 80px !important;
+    width: var(--space-20) !important;
   }
 
   /* Nodes: 2-column grid */
@@ -1420,7 +1435,7 @@ header.scrolled {
     top: auto !important; bottom: auto !important;
     transform: none !important;
     width: auto !important;
-    margin-bottom: 8px;
+    margin-bottom: var(--space-2);
     display: block;
   }
   /* Create 2-col grid wrapper via parent pseudo layout */
@@ -1442,7 +1457,7 @@ header.scrolled {
     border-radius: 0.625rem 0.625rem 0 0;
     border-bottom-color: transparent;
   }
-  .eco-icon--logo img { width: 32px !important; height: 32px !important; }
+  .eco-icon--logo img { width: var(--space-8) !important; height: var(--space-8) !important; }
   .eco-node-title { font-size: 0.6875rem; }
   .eco-node-sub { font-size: 0.5625rem; }
 
@@ -1548,3 +1563,145 @@ body { top: 0px !important; }
 .goog-tooltip { display: none !important; }
 .goog-tooltip:hover { display: none !important; }
 .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+
+/* ══════════════════ NEW NETWORK DIAGRAM ══════════════════ */
+.network {
+  width: 100%;
+  aspect-ratio: 1000 / 780;
+  position: relative;
+}
+
+.node {
+  position: absolute;
+  border-radius: 62.4375em;
+  background: radial-gradient(circle at 30% 20%, #fff 0%, #f5fdff 48%, #e5f8ff 100%);
+  box-shadow:
+    inset 0 0 1.375em rgba(255,255,255,.95),
+    0 0 0 2px rgba(90,175,220,.45),
+    0 var(--space-4) var(--space-8) rgba(32,130,190,.14);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  cursor: pointer;
+  user-select: none;
+}
+
+.node::before {
+  content: "";
+  position: absolute;
+  inset: 0.4375em;
+  border-radius: inherit;
+  border: 1px solid rgba(83, 178, 225, .35);
+  pointer-events: none;
+}
+
+.node-center {
+  width: clamp(7rem, 25vw, 12rem);
+  height: clamp(7rem, 25vw, 12rem);
+  z-index: 8;
+}
+
+.node-small {
+  width: clamp(4.5rem, 15vw, 8.25rem);
+  height: clamp(4.5rem, 15vw, 8.25rem);
+}
+
+.line {
+  stroke: rgba(88, 176, 225, .3);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 0.375em rgba(120,220,255,.55));
+}
+
+.ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 62.4375em;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(90, 185, 235, .28);
+  box-shadow: 0 0 var(--space-10) rgba(120, 220, 255, .24);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ring-1 {
+  width: clamp(12.5em, 33vw, 20em);
+  height: clamp(12.5em, 33vw, 20em);
+}
+
+.ring-2 {
+  width: clamp(10.3125em, 28vw, 16.875em);
+  height: clamp(10.3125em, 28vw, 16.875em);
+  opacity: .65;
+}
+
+.dot {
+  position: absolute;
+  width: 1.125em;
+  height: 1.125em;
+  border-radius: 62.4375em;
+  background: radial-gradient(circle, #fff 0%, #c8f5ff 45%, transparent 72%);
+  box-shadow: 0 0 var(--space-5) rgba(90, 215, 255, .9);
+  z-index: 4;
+  transform: translate(-50%, -50%);
+}
+
+.tooltip {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 17.5em;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate3d(var(--space-5), var(--space-5), 0) scale(.95);
+  background: rgba(255, 255, 255, .20);
+  backdrop-filter: blur(1em);
+  border: 1px solid rgba(80, 170, 220, .35);
+  box-shadow:
+    0 var(--space-5) 2.8125em rgba(20, 95, 150, .18),
+    inset 0 0 1.125em rgba(255,255,255,.8);
+  border-radius: 1.125em;
+  padding: var(--space-4);
+}
+
+.tooltip-title {
+  font-size: 0.9375em;
+  font-weight: 900;
+  color: #062b78;
+  margin-bottom: 0.375em;
+}
+
+.tooltip-desc {
+  font-size: 0.8125em;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.tooltip-tag {
+  display: inline-flex;
+  margin-top: 0.625em;
+  padding: 0.3125em 0.625em;
+  border-radius: 62.4375em;
+  background: rgba(0, 89, 220, .08);
+  color: #0059dc;
+  font-size: 0.6875em;
+  font-weight: 800;
+}
+
+@media (max-width: 40em) {
+  .node-small {
+    width: 4.375rem;
+    height: 4.375rem;
+  }
+  .node-center {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+  .tooltip {
+    width: 15em;
+  }
+}

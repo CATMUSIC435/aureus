@@ -70,10 +70,66 @@ $(function () {
   ════════════════════════════════════════════════════ */
 
   /* — Ecosystem — */
-  gsap.from('.eco-left',        { x: -50, opacity: 0, duration: 0.8,  scrollTrigger: st('#ecosystem', 'top 75%') });
-  gsap.from('.eco-center-logo', { scale: 0.6, opacity: 0, duration: 0.9, ease: EASE_BACK, scrollTrigger: st('#ecosystem', 'top 72%') });
-  gsap.from('.eco-diagram > svg', { opacity: 0, duration: 1.5, delay: 0.4, scrollTrigger: st('#ecosystem', 'top 70%') });
-  gsap.from('.eco-node',        { opacity: 0, scale: 0.8, stagger: 0.15, duration: 0.7, ease: EASE_BACK, scrollTrigger: st('#ecosystem', 'top 65%') });
+  gsap.from('.eco-left', { x: -50, opacity: 0, duration: 0.8, scrollTrigger: st('#ecosystem', 'top 75%') });
+  
+  if (document.querySelector('.network')) {
+    const ecoSt = st('#ecosystem', 'top 75%');
+    
+    gsap.from(".center-node", {
+      scale: 0.8, opacity: 0, duration: 1.2, ease: "power2.out",
+      scrollTrigger: ecoSt
+    });
+
+    gsap.from(".logo-node", {
+      scale: 0, opacity: 0, duration: 0.85, delay: 0.35, stagger: 0.12, ease: "back.out(1.8)",
+      scrollTrigger: ecoSt
+    });
+
+    gsap.from(".line", {
+      strokeDasharray: 900, strokeDashoffset: 900, opacity: 0, duration: 1.5, delay: 0.45, ease: "power2.out",
+      scrollTrigger: ecoSt
+    });
+
+    // Continuous animations
+    gsap.to(".logo-node", { y: -7, duration: 2.2, repeat: -1, yoyo: true, ease: "sine.inOut", stagger: 0.18 });
+    gsap.to(".center-node", { scale: 1.015, duration: 3, repeat: -1, yoyo: true, ease: "sine.inOut" });
+    gsap.to(".ring-1", { rotate: 360, duration: 32, repeat: -1, ease: "none" });
+    gsap.to(".ring-2", { rotate: -360, duration: 38, repeat: -1, ease: "none" });
+    gsap.to(".dot", { scale: 1.45, opacity: 0.4, duration: 1.2, repeat: -1, yoyo: true, stagger: 0.25, ease: "sine.inOut" });
+
+    // Tooltip logic
+    const tooltip = document.getElementById("tooltip");
+    const tooltipTitle = document.getElementById("tooltipTitle");
+    const tooltipDesc = document.getElementById("tooltipDesc");
+    const tooltipTag = document.getElementById("tooltipTag");
+
+    const moveTooltip = (e) => {
+      const padding = 18;
+      const tooltipWidth = tooltip.offsetWidth;
+      const tooltipHeight = tooltip.offsetHeight;
+      let x = e.clientX + 22;
+      let y = e.clientY + 22;
+      if (x + tooltipWidth > window.innerWidth - padding) x = e.clientX - tooltipWidth - 22;
+      if (y + tooltipHeight > window.innerHeight - padding) y = e.clientY - tooltipHeight - 22;
+      gsap.to(tooltip, { x, y, duration: 0.18, ease: "power2.out" });
+    };
+
+    document.querySelectorAll(".node").forEach((node) => {
+      node.addEventListener("mouseenter", (e) => {
+        if(tooltipTitle) tooltipTitle.textContent = node.dataset.title;
+        if(tooltipDesc) tooltipDesc.textContent = node.dataset.desc;
+        if(tooltipTag) tooltipTag.textContent = node.dataset.tag;
+        gsap.to(node, { scale: 1.08, duration: 0.28, ease: "power2.out" });
+        gsap.to(tooltip, { opacity: 1, scale: 1, duration: 0.22, ease: "power2.out" });
+        moveTooltip(e);
+      });
+      node.addEventListener("mousemove", moveTooltip);
+      node.addEventListener("mouseleave", () => {
+        gsap.to(node, { scale: 1, duration: 0.28, ease: "power2.out" });
+        gsap.to(tooltip, { opacity: 0, scale: 0.95, duration: 0.18, ease: "power2.out" });
+      });
+    });
+  }
 
   /* — Stats Ticker — */
   gsap.from('.ticker-item', { y: 20, opacity: 0, stagger: 0.1, duration: 0.5, ease: 'power2.out', scrollTrigger: st('#stats', 'top 88%') });

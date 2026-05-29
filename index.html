@@ -352,139 +352,95 @@
           </div>
 
           <!-- RIGHT: Network Diagram -->
-          <div class="eco-diagram relative flex items-center justify-center" style="min-height:420px;">
+          <div class="network w-full flex items-center justify-center relative">
+            <!-- <svg class="absolute inset-0 w-full h-full pointer-events-none z-[1]" viewBox="0 0 1000 780" preserveAspectRatio="none">
+              <polygon class="line" points="500,95 180,285 300,630 700,630 820,285" fill="none" />
+              <line class="line connect" x1="500" y1="390" x2="500" y2="95" />
+              <line class="line connect" x1="500" y1="390" x2="180" y2="285" />
+              <line class="line connect" x1="500" y1="390" x2="820" y2="285" />
+              <line class="line connect" x1="500" y1="390" x2="300" y2="630" />
+              <line class="line connect" x1="500" y1="390" x2="700" y2="630" />
+            </svg> -->
 
-            <!-- SVG connection lines (behind everything) -->
-            <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 700 420" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-              <!-- Outer circle rings -->
-              <circle class="spin-slow-reverse" cx="350" cy="210" r="155" fill="none" stroke="#dbeafe" stroke-width="1.2" stroke-dasharray="6 4"/>
-              <circle class="spin-slow" cx="350" cy="210" r="195" fill="none" stroke="#eff6ff" stroke-width="1" stroke-dasharray="4 6"/>
+            <!-- <div class="ring ring-1"></div> -->
+            <div class="ring ring-2"></div>
 
-              <!-- Pentagon: center → each node -->
-              <!-- Center → Holding (top) -->
-              <line class="dash-flow" x1="350" y1="210" x2="350" y2="50"  stroke="#e02424" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
-              <!-- Center → Lab (top-left) -->
-              <line class="dash-flow" x1="350" y1="210" x2="198" y2="161" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
-              <!-- Center → DIP Tech (top-right) -->
-              <line class="dash-flow" x1="350" y1="210" x2="502" y2="161" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
-              <!-- Center → Digital (bottom-left) -->
-              <line class="dash-flow" x1="350" y1="210" x2="256" y2="340" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
-              <!-- Center → Ventures (bottom-right) -->
-              <line class="dash-flow" x1="350" y1="210" x2="444" y2="340" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
-
-              <!-- Pentagon edges (between adjacent nodes) -->
-              <line class="dash-flow" x1="198" y1="161" x2="350" y2="50"  stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.45"/>
-              <line class="dash-flow" x1="350" y1="50"  x2="502" y2="161" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.45"/>
-              <line class="dash-flow" x1="198" y1="161" x2="256" y2="340" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.45"/>
-              <line class="dash-flow" x1="502" y1="161" x2="444" y2="340" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.45"/>
-              <line class="dash-flow" x1="256" y1="340" x2="444" y2="340" stroke="#bfdbfe" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.45"/>
-
-              <!-- Pulse dots at midpoints of center→node lines -->
-              <circle class="pulse-dot" style="animation-delay:0s;"   cx="274" cy="186" r="3" fill="#3b82f6" opacity="0.5"/>
-              <circle class="pulse-dot" style="animation-delay:0.4s;" cx="426" cy="186" r="3" fill="#3b82f6" opacity="0.5"/>
-              <circle class="pulse-dot" style="animation-delay:0.8s;" cx="303" cy="275" r="3" fill="#3b82f6" opacity="0.5"/>
-              <circle class="pulse-dot" style="animation-delay:1.2s;" cx="397" cy="275" r="3" fill="#3b82f6" opacity="0.5"/>
-              <circle class="pulse-dot" style="animation-delay:1.6s;" cx="350" cy="130" r="3" fill="#e02424" opacity="0.55"/>
-            </svg>
+            <div class="dot" style="left:50%; top:30%;"></div>
+            <div class="dot" style="left:35%; top:60%;"></div>
+            <div class="dot" style="left:65%; top:60%;"></div>
 
             <!-- CENTER: AG Logo -->
-            <div class="eco-center-logo absolute z-10 flex flex-col items-center justify-center" style="
-              left:50%; top:50%; transform:translate(-50%,-50%);
-              width:148px; height:148px;
-              border-radius:50%;
-              background:#fff;
-              box-shadow: 0 0 0 10px rgba(219,234,254,0.5), 0 0 0 22px rgba(219,234,254,0.25), 0 8px 32px rgba(26,86,219,0.12);
-              border: 1.5px solid rgba(26,86,219,0.15);
-            ">
-              <img src="logo-aureus-global-no-slogan.png" alt="Aureus Global" style="width:110px; object-fit:contain; mix-blend-mode:multiply;" />
+            <div
+              class="node node-center center-node"
+              style="left:50%; top:50%;"
+              data-title="AUREUS GLOBAL"
+              data-desc="Trung tâm hệ sinh thái, kết nối các công ty thành viên trong chiến lược phát triển công nghệ, đầu tư và vận hành."
+              data-tag="Global Ecosystem"
+            >
+              <img src="logo-aureus-global-no-slogan.png" alt="Aureus Global" style="width:60%; max-width:100px; object-fit:contain; mix-blend-mode:multiply;" />
             </div>
 
-            <!-- NODE: AUREUS HOLDING (top-center) — pentagon top vertex -->
-            <div class="eco-node eco-node--top-center absolute" style="left:50%; top:-10%; transform:translateX(-50%);">
-              <div class="eco-node-inner eco-node-inner--center">
-                <div class="eco-icon eco-icon--logo">
-                  <img src="logo-holding.png" alt="Aureus Holding" />
-                </div>
-                <div>
-                  <p class="eco-node-title">Aureus Holding</p>
-                  <p class="eco-node-sub">Tập đoàn &amp; Quản trị</p>
-                </div>
-              </div>
-              <div class="eco-node-detail eco-node-detail--center">
-                <p class="eco-detail-desc">Quản trị và điều phối chiến lược toàn bộ hệ sinh thái, đảm bảo tăng trưởng bền vững.</p>
-                <a href="#" class="eco-detail-link">Tìm hiểu thêm →</a>
-              </div>
+            <!-- NODE: AUREUS HOLDING -->
+            <div
+              class="node node-small logo-node"
+              style="left:50%; top:12%;"
+              data-title="AUREUS HOLDING"
+              data-desc="Đơn vị định hướng chiến lược, quản trị đầu tư và phát triển hệ sinh thái doanh nghiệp."
+              data-tag="Holding"
+            >
+              <img src="logo-holding.png" alt="Aureus Holding" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
 
-            <!-- NODE: AUREUS LAB (top-left) — pentagon top-left vertex -->
-            <div class="eco-node absolute" style="left:0%; top:28%;">
-              <div class="eco-node-inner">
-                <div class="eco-icon eco-icon--logo">
-                  <img src="logo-aureus-labs.png" alt="Aureus Lab" />
-                </div>
-                <div>
-                  <p class="eco-node-title">Aureus Lab</p>
-                  <p class="eco-node-sub">Nghiên cứu &amp; AI<br>Công nghệ Lõi</p>
-                </div>
-              </div>
-              <div class="eco-node-detail">
-                <p class="eco-detail-desc">Nghiên cứu AI, Machine Learning, Big Data và phát triển các công nghệ lõi cho toàn hệ sinh thái.</p>
-                <a href="#" class="eco-detail-link">Tìm hiểu thêm →</a>
-              </div>
+            <!-- NODE: AUREUS LAB -->
+            <div
+              class="node node-small logo-node"
+              style="left:18%; top:36%;"
+              data-title="AUREUS LAB"
+              data-desc="Không gian nghiên cứu, thử nghiệm sản phẩm, công nghệ mới, AI, dữ liệu và giải pháp số."
+              data-tag="Innovation Lab"
+            >
+              <img src="logo-aureus-labs.png" alt="Aureus Lab" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
 
-            <!-- NODE: DIP TECH (top-right) — pentagon top-right vertex -->
-            <div class="eco-node absolute" style="right:0%; top:28%;">
-              <div class="eco-node-inner eco-node-inner--right">
-                <div class="eco-icon eco-icon--logo">
-                  <img src="dip-tech-3d-cam.png" alt="DIP Tech" />
-                </div>
-                <div>
-                  <p class="eco-node-title">DIP Tech</p>
-                  <p class="eco-node-sub">Giải pháp Doanh nghiệp<br>&amp; Vận hành</p>
-                </div>
-              </div>
-              <div class="eco-node-detail eco-node-detail--right">
-                <p class="eco-detail-desc">Cung cấp giải pháp công nghệ và vận hành toàn diện cho doanh nghiệp và tổ chức lớn.</p>
-                <a href="#" class="eco-detail-link">Tìm hiểu thêm →</a>
-              </div>
+            <!-- NODE: DIP TECH -->
+            <div
+              class="node node-small logo-node"
+              style="left:82%; top:36%;"
+              data-title="DIP TECH"
+              data-desc="Đơn vị công nghệ phụ trách nền tảng số, phần mềm, tích hợp hệ thống và chuyển đổi số."
+              data-tag="Technology"
+            >
+              <img src="dip-tech-3d-cam.png" alt="DIP Tech" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
 
-            <!-- NODE: AUREUS DIGITAL (bottom-left) — pentagon bottom-left vertex -->
-            <div class="eco-node absolute" style="left:0%; top:70%;">
-              <div class="eco-node-inner">
-                <div class="eco-icon eco-icon--logo">
-                  <img src="logo-aureus-digital.png" alt="Aureus Digital" />
-                </div>
-                <div>
-                  <p class="eco-node-title">Aureus Digital</p>
-                  <p class="eco-node-sub">Tăng trưởng Số<br>&amp; Marketing</p>
-                </div>
-              </div>
-              <div class="eco-node-detail">
-                <p class="eco-detail-desc">Tăng trưởng thương hiệu và hiệu quả kinh doanh dựa trên dữ liệu, công nghệ và marketing số.</p>
-                <a href="#" class="eco-detail-link">Tìm hiểu thêm →</a>
-              </div>
+            <!-- NODE: AUREUS DIGITAL -->
+            <div
+              class="node node-small logo-node"
+              style="left:30%; top:80%;"
+              data-title="AUREUS DIGITAL"
+              data-desc="Đơn vị triển khai truyền thông số, thương hiệu, marketing performance và trải nghiệm khách hàng."
+              data-tag="Digital Growth"
+            >
+              <img src="logo-aureus-digital.png" alt="Aureus Digital" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
 
-            <!-- NODE: AUREUS VENTURES (bottom-right) — pentagon bottom-right vertex -->
-            <div class="eco-node absolute" style="right:0%; top:70%;">
-              <div class="eco-node-inner eco-node-inner--right">
-                <div class="eco-icon eco-icon--logo">
-                  <img src="logo-aureus-ventures.png" alt="Aureus Ventures" />
-                </div>
-                <div>
-                  <p class="eco-node-title">Aureus Ventures</p>
-                  <p class="eco-node-sub">Đầu tư<br>Công nghệ</p>
-                </div>
-              </div>
-              <div class="eco-node-detail eco-node-detail--right">
-                <p class="eco-detail-desc">Đầu tư chiến lược vào các công ty công nghệ tiềm năng, tạo giá trị dài hạn bền vững.</p>
-                <a href="#" class="eco-detail-link">Tìm hiểu thêm →</a>
-              </div>
+            <!-- NODE: AUREUS VENTURES -->
+            <div
+              class="node node-small logo-node"
+              style="left:70%; top:80%;"
+              data-title="AUREUS VENTURES"
+              data-desc="Mảng đầu tư, phát triển dự án, tìm kiếm cơ hội tăng trưởng và mở rộng hệ sinh thái."
+              data-tag="Ventures"
+            >
+              <img src="logo-aureus-ventures.png" alt="Aureus Ventures" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
-
-          </div><!-- /eco-diagram -->
+          </div><!-- /network -->
+          
+          <div id="tooltip" class="tooltip">
+            <div id="tooltipTitle" class="tooltip-title"></div>
+            <div id="tooltipDesc" class="tooltip-desc"></div>
+            <div id="tooltipTag" class="tooltip-tag"></div>
+          </div>
         </div>
       </div>
     </section>
