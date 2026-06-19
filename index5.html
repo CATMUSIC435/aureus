@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Về chúng tôi | AUREUS GLOBAL</title>
+<!-- Google Fonts: Be Vietnam Pro -->
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#161c27",
+                        "secondary-fixed-dim": "#75d1ff",
+                        "on-primary-fixed": "#001848",
+                        "tertiary-fixed": "#ffdad6",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#dde2f3",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#b90010",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c3c6d6",
+                        "surface-dim": "#d4daea",
+                        "on-tertiary-container": "#ffc5be",
+                        "on-tertiary-fixed-variant": "#93000a",
+                        "surface-container-high": "#e3e8f9",
+                        "surface-container-highest": "#dde2f3",
+                        "surface-tint": "#0c56d0",
+                        "on-secondary-container": "#004b65",
+                        "background": "#f9f9ff",
+                        "primary-fixed": "#dae2ff",
+                        "secondary": "#006688",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "secondary-fixed": "#c2e8ff",
+                        "surface-container": "#e8eeff",
+                        "primary": "#003d9b",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f9f9ff",
+                        "primary-container": "#0052cc",
+                        "tertiary": "#8c0009",
+                        "surface-container-low": "#f1f3ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004d67",
+                        "inverse-surface": "#2a303d",
+                        "inverse-primary": "#b2c5ff",
+                        "outline": "#737685",
+                        "on-surface": "#161c27",
+                        "on-surface-variant": "#434654",
+                        "tertiary-fixed-dim": "#ffb4ab",
+                        "inverse-on-surface": "#ecf0ff",
+                        "secondary-container": "#00c1fd",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#410002",
+                        "on-primary-container": "#c4d2ff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "on-secondary-fixed": "#001e2b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "100px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "element-gap": "32px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "display-lg-mobile": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "display-lg": ["Be Vietnam Pro"],
+                        "headline-sm": ["Be Vietnam Pro"]
+                    },
+                                        "fontSize": {
+                        "label-caps": ["11px", {"lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline-sm": ["15px", {"lineHeight": "1.4", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: #f9f9ff; color: #161c27; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hero-gradient { background: radial-gradient(circle at 70% 30%, rgba(0, 82, 204, 0.05) 0%, transparent 50%); }
+        .timeline-line::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #c3c6d6; transform: translateX(-50%); }
+        @media (max-width: 768px) { .timeline-line::before { left: 24px; } }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.5); }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="overflow-x-hidden">
+  <!-- ═══════════════════════════════════════════ NAVBAR ═══════════════════════════════════════════ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300">
+    <div class="max-w-screen-xl mx-auto px-4 xl:px-6">
+      <div class="flex items-center h-16 xl:h-[68px] gap-6 xl:gap-8">
+
+        <!-- ── Logo ── -->
+        <a id="logo" href="#" class="flex items-center gap-2 shrink-0 mr-2 xl:mr-6">
+          <img
+            src="logo-aureus-global.png"
+            alt="Aureus Global"
+            class="h-9 xl:h-10 w-auto object-contain"
+            onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
+          />
+          <!-- Fallback SVG logo if image not found -->
+          <div id="logo-fallback" style="display:none;" class="flex items-center gap-2">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="18,2 32,30 4,30" fill="none" stroke="#1a56db" stroke-width="3.5"/>
+              <polygon points="18,14 24,26 12,26" fill="#e02424"/>
+              <rect x="22" y="10" width="12" height="10" rx="2" fill="#e02424" opacity="0.9"/>
+              <rect x="25" y="13" width="6" height="6" rx="1" fill="#fff"/>
+            </svg>
+            <div class="leading-tight">
+              <span class="block text-sm font-bold tracking-wider text-aureus-blue uppercase">Aureus</span>
+              <span class="block text-xs font-bold tracking-widest text-aureus-red uppercase">Global</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ── Desktop Nav Links ── -->
+        <nav id="desktop-nav" class="hidden xl:flex items-center gap-1 flex-1">
+          <a href="index.html" data-nav="HOME"               class="nav-link active text-[11px] font-semibold uppercase text-gray-800 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Trang chủ</a>
+          <a href="index2.html" data-nav="ECOSYSTEM"          class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Hệ Sinh Thái</a>
+          <a href="index4.html" data-nav="TECHNOLOGY"         class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Công Nghệ</a>
+          <a href="index3.html" data-nav="INVESTMENT"         class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Đầu Tư</a>
+          <a href="index5.html" data-nav="ABOUT US"           class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Về Chúng Tôi</a>
+          <a href="index6.html" data-nav="INVESTOR RELATIONS" class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Quan hệ Cổ đông</a>
+          <a href="index7.html" data-nav="NEWS"               class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Tin tức</a>
+          <a href="index8.html" data-nav="CAREERS"            class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Tuyển dụng</a>
+        </nav>
+
+        <!-- ── Right Actions ── -->
+        <div class="hidden xl:flex items-center gap-3 ml-auto shrink-0">
+
+          <!-- Language Selector -->
+          <div class="relative" id="lang-wrapper">
+            <button
+              id="lang-btn"
+              class="flex items-center gap-1.5 text-[11px] font-semibold text-gray-600 uppercase hover:text-aureus-blue transition-colors duration-200 px-2 py-1"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <!-- Globe icon -->
+              <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span id="lang-label">EN</span>
+              <svg id="lang-chevron" class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div id="lang-dropdown" class="lang-dropdown" role="listbox">
+              <div class="lang-option" data-lang="EN" data-langcode="en" role="option" tabindex="0">🇺🇸 English</div>
+              <div class="lang-option" data-lang="VI" data-langcode="vi" role="option" tabindex="0">🇻🇳 Tiếng Việt</div>
+            </div>
+          </div>
+
+          <!-- Contact Us Button -->
+          <a
+            id="contact-btn"
+            href="#contact"
+            class="contact-btn flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-aureus-blue border border-aureus-blue rounded px-4 py-2 hover:bg-aureus-blue hover:text-white transition-all duration-300"
+          >
+            Liên hệ
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- ── Mobile Hamburger ── -->
+        <button
+          id="hamburger"
+          class="xl:hidden ml-auto flex flex-col justify-center gap-[5px] p-2 rounded"
+          aria-label="Toggle menu"
+        >
+          <span id="ham-1" class="block h-0.5 w-6 bg-gray-700 rounded transition-all duration-300 origin-center"></span>
+          <span id="ham-2" class="block h-0.5 w-6 bg-gray-700 rounded transition-all duration-300"></span>
+          <span id="ham-3" class="block h-0.5 w-6 bg-gray-700 rounded transition-all duration-300 origin-center"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ── Mobile Menu ── -->
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html" class="text-xs font-semibold uppercase tracking-wider text-aureus-blue px-6 py-3 border-b border-gray-100">Trang chủ</a>
+      <a href="index2.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Hệ Sinh Thái</a>
+      <a href="index4.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Công Nghệ</a>
+      <a href="index3.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Đầu Tư</a>
+      <a href="index5.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Về Chúng Tôi</a>
+      <a href="index6.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Quan hệ Cổ đông</a>
+      <a href="index7.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Tin tức</a>
+      <a href="index8.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Tuyển dụng</a>
+      <div class="px-6 pt-4 pb-5 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-xs font-semibold text-gray-600">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          EN
+        </div>
+        <a href="#contact" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-aureus-blue border border-aureus-blue rounded px-4 py-2">
+          Contact Us
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+<main class="pt-20 xl:pt-[68px]">
+<!-- Hero Section -->
+<section class="relative min-h-[614px] flex items-center overflow-hidden hero-gradient">
+<div class="max-w-screen-xl mx-auto px-6 xl:px-10 grid lg:grid-cols-2 gap-8 xl:gap-12 items-center py-16 xl:py-24">
+<div class="z-10">
+<p class="font-label-caps text-label-caps text-primary tracking-[0.2em] mb-4">BẢN SẮC CỦA CHÚNG TÔI</p>
+<h1 class="font-display-lg text-display-lg md:text-display-lg mb-6 leading-tight">Định nghĩa tương lai của <span class="text-primary">Sự cộng hưởng toàn cầu</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8">Aureus Global là tập đoàn công nghệ và đầu tư quy mô toàn cầu, dẫn dắt kỷ nguyên số hóa thông qua việc kiến tạo hệ sinh thái trí tuệ nhân tạo (AI) và chiến lược phân bổ vốn ưu việt, hướng tới sự phát triển bền vững vượt biên giới.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded font-label-caps text-label-caps flex items-center gap-2 group transition-all hover:pr-10">
+                        TÌM HIỂU CÂU CHUYỆN CỦA CHÚNG TÔI <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="absolute -z-10 w-full h-full bg-primary/5 rounded-full blur-3xl"></div>
+<img class="w-full h-auto object-contain" data-alt="A futuristic, high-end 3D abstract sculpture representing unity and connectivity, rendered in polished chrome and translucent blue glass with light rays refracting through. The background is a clean, bright minimalist studio setting consistent with corporate professional aesthetics, using a palette of deep navy and crisp white with soft ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaFoGUQdS1eB6-RK8Vx8xCPwscpAkRWTrT33NoP93dxctaaxJhwKjfRdZsJZKVn2UEmFsbh4IAxl7GgPReE82AqaaIYPHis_oOLH9Hffc2trLDqothqifB7MyZHoRTymlQ7ykAFBljH7pA5XiLkimLampOY_-w0YswA_wv0f9NFWgMM0EacmohgCcLoKtfNwfZ42JsV4DAtmyi4K00lnv-Kkg3BbElTjGbUBahVVrUHV9Lp1U_yY3lJoCdfXMKtm_PykXlTmPfFA4"/>
+</div>
+</div>
+</section>
+<!-- Vision & Mission (Glass Cards) -->
+<section class="py-16 xl:py-24 bg-surface-container-low">
+<div class="max-w-screen-xl mx-auto px-6 xl:px-10">
+<div class="grid md:grid-cols-2 gap-6 xl:gap-10">
+<div class="glass-card p-12 rounded-xl">
+<span class="material-symbols-outlined text-primary text-display-lg mb-6" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<h2 class="font-headline-md text-headline-md mb-4 text-on-background">Tầm nhìn</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Trở thành định chế công nghệ và đầu tư số 1 khu vực, tiên phong kiến tạo các hệ sinh thái số bền vững. Chúng tôi khao khát thúc đẩy sự thịnh vượng toàn cầu thông qua sự kết hợp hoàn mỹ giữa trí tuệ nhân tạo (AI) tiên tiến và tiềm năng vô hạn của con người.</p>
+</div>
+<div class="glass-card p-12 rounded-xl">
+<span class="material-symbols-outlined text-primary text-display-lg mb-6" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<h2 class="font-headline-md text-headline-md mb-4 text-on-background">Sứ mệnh</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Cam kết hiện thực hóa tương lai bằng việc cung cấp các giải pháp công nghệ mang tính cách mạng và chiến lược đầu tư tinh hoa. Aureus Global đồng hành cùng các doanh nghiệp đa quốc gia tối ưu hóa vận hành, tạo ra di sản giá trị thực cho cộng đồng toàn cầu trong kỷ nguyên trí tuệ nhân tạo.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Values -->
+<section class="py-16 xl:py-24 bg-background">
+<div class="max-w-screen-xl mx-auto px-6 xl:px-10">
+<div class="text-center mb-16">
+<p class="font-label-caps text-label-caps text-primary mb-4">TRIẾT LÝ</p>
+<h2 class="font-headline-md text-display-lg-mobile md:text-headline-md">Giá trị cốt lõi</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-10">
+<div class="bg-surface p-8 border border-outline-variant/30 hover:border-primary transition-colors group">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">lightbulb</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-3">Đổi mới</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Tiên phong khai phá những giới hạn mới của công nghệ AI và mô hình kinh doanh, định hình lại các chuẩn mực toàn cầu.</p>
+</div>
+<div class="bg-surface p-8 border border-outline-variant/30 hover:border-primary transition-colors group">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-3">Tin cậy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Kiến tạo niềm tin vững chắc với các đối tác quốc tế dựa trên nguyên tắc minh bạch, chính trực và trách nhiệm tối đa.</p>
+</div>
+<div class="bg-surface p-8 border border-outline-variant/30 hover:border-primary transition-colors group">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">groups</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-3">Hợp lực</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Hội tụ tinh hoa nhân loại, kết nối các nguồn lực toàn cầu để tạo ra sức mạnh cộng hưởng vượt trội, phá vỡ mọi rào cản.</p>
+</div>
+<div class="bg-surface p-8 border border-outline-variant/30 hover:border-primary transition-colors group">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">eco</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-3">Bền vững</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Cam kết phát triển hệ sinh thái song hành cùng trách nhiệm bảo vệ môi trường, định hướng lợi ích dài hạn cho xã hội.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- History Timeline -->
+<section class="py-16 xl:py-24 bg-surface-container-high overflow-hidden">
+<div class="max-w-screen-xl mx-auto px-6 xl:px-10">
+<div class="mb-16">
+<p class="font-label-caps text-label-caps text-primary mb-4">HÀNH TRÌNH CỦA CHÚNG TÔI</p>
+<h2 class="font-headline-md text-headline-md">Lịch sử hình thành</h2>
+</div>
+<div class="relative timeline-line space-y-12">
+<!-- Milestone 1 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between md:odd:flex-row-reverse">
+<div class="md:w-[45%] mb-8 md:mb-0">
+<div class="bg-surface p-8 rounded-lg shadow-sm">
+<span class="font-label-caps text-primary text-headline-sm mb-2 block">2018</span>
+<h4 class="font-headline-sm text-headline-sm mb-3">Khởi nguồn ý tưởng</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Thành lập trung tâm nghiên cứu Aureus Lab tại Thung lũng Silicon, quy tụ mười lăm nhà khoa học hàng đầu tập trung vào trí tuệ nhân tạo (AI) và phân tích Dữ liệu lớn (Big Data).</p>
+</div>
+</div>
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-surface-container-high z-10"></div>
+<div class="md:w-[45%] hidden md:block">
+<img class="rounded-lg grayscale hover:grayscale-0 transition-all duration-500" data-alt="A black and white architectural photograph of a sleek, modern glass and steel skyscraper in a bustling financial district, representing the founding of a major corporate entity. The lighting is dramatic and clean, emphasizing sharp lines and futuristic design. Professional photography style with a high-key, airy feeling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7clikeCen1qVw4xE3CkmRBJf7tyTvmv8tnXdG1TBW9OT1ErS3W0L1PoIUu4niGo6O7WkN3CAK5wJP6SqIWYtH0CnpGMf-MatOQBC7b6T0fE1h9SJrcHNwYOIbZEVns7SsO1D1_J6reLWpPsCSFGT_d5OCTO534Kg-lGRjZFQsbtwlxAQHMsyBh2dJulRb0ZJC_Hq2qrl_-CI80qgux3KtIzlVyoaxWmnAtt0UOgrj6dj4YYQ3T3M08j_yU5qcTClrpjemIcklv8g"/>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between md:odd:flex-row-reverse">
+<div class="md:w-[45%] mb-8 md:mb-0">
+<div class="bg-surface p-8 rounded-lg shadow-sm">
+<span class="font-label-caps text-primary text-headline-sm mb-2 block">2020</span>
+<h4 class="font-headline-sm text-headline-sm mb-3">Thành lập AUREUS GLOBAL</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Chính thức hợp nhất các mảng công nghệ cốt lõi và đầu tư chiến lược, ra mắt thương hiệu Aureus Global tại các trung tâm tài chính toàn cầu.</p>
+</div>
+</div>
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-surface-container-high z-10"></div>
+<div class="md:w-[45%] hidden md:block">
+<img class="rounded-lg grayscale hover:grayscale-0 transition-all duration-500" data-alt="A professional group portrait of a diverse leadership team standing in a brightly lit, minimalist corporate atrium. The leaders are wearing modern business attire, looking confident and forward-facing. The environment is filled with natural light, featuring large glass windows and polished white floors, suggesting a high-level corporate atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLzmty2OIAzORbGn9AW58a08dM5qtT3wk3tEAyLd6ESPG4lMK46ULAifJ0n0bekDAykpgSv0PhVJTSrvzIx6FgRii9a64rQMvSIoJ1vxJNbKHvhYdugij2yWuTl0-nOW-xQpWuVvmCne9Avmoo6XJz9Xk7YBeDoc-1zvcF4w4f4rob_TDkBua-yPTC_LNUDVzi3BypEx1nwI9Fl_d-eZtpkNyW6FIPx-3r5mDF-rAa71Q_mnEJD79N4Y7Dicsyb0X9y_DpInxjoEE"/>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between md:odd:flex-row-reverse">
+<div class="md:w-[45%] mb-8 md:mb-0">
+<div class="bg-surface p-8 rounded-lg shadow-sm">
+<span class="font-label-caps text-primary text-headline-sm mb-2 block">2024</span>
+<h4 class="font-headline-sm text-headline-sm mb-3">Mở rộng hệ sinh thái</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Hiện diện tại hơn 15 quốc gia và vươn tầm ảnh hưởng với mạng lưới gồm hơn 2.000 chuyên gia, đối tác chiến lược tại các châu lục, khẳng định vị thế toàn cầu.</p>
+</div>
+</div>
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-surface-container-high z-10"></div>
+<div class="md:w-[45%] hidden md:block">
+<img class="rounded-lg grayscale hover:grayscale-0 transition-all duration-500" data-alt="A wide-angle aerial view of a vibrant, interconnected global map displayed on a giant digital screen in a high-tech command center. Glowing nodes and data lines connect major cities across the globe. The room is dark with ambient blue lighting reflecting off glossy surfaces, illustrating the global reach and technological connectivity of the company." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoafpdVyqhYbLvOkOPqxdpLr4bfs5tguwepQLX6uytEMbSItAHJvx7l_Ulwb1cvKC_txSNpj2Y3U0fitGj4B-U4zL_Oy6AcGCiITVaCIwUBs6kZw7d7Hzy-aSINdQn0uHhPrz5G1245GbOKpzASK-pzOqvIQQaBPl0u4Gk9xvFPirxcqCuJIQETAB2yn_KbX_l6y-p_a8yr6J9Ql_rWcn9qgU5p9MsItwkoMMYLzRMQ56vTiuHiNYriS6zb0Le_o6ondOWFCltXoQ"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Team -->
+<section class="py-16 xl:py-24 bg-background">
+<div class="max-w-screen-xl mx-auto px-6 xl:px-10">
+<div class="text-center mb-16">
+<p class="font-label-caps text-label-caps text-primary mb-4">HỘI ĐỒNG QUẢN TRỊ</p>
+<h2 class="font-headline-md text-headline-md">Ban lãnh đạo</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-10">
+<!-- Member 1 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional studio headshot of a senior male executive in his late 40s, wearing a tailored charcoal suit and a crisp white shirt." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUSS7YfZWlmBxju8KfqyRVlIBbDdynXP4GTMZXptENYblVOikc43FGpTKd2F9pF3StmVIKdVESAK92XIG5wZRObS4pNEY5cr2x7wNOm1MrjPFdvzBQVGuoBL16O4RIXBkp_YkedKd8n7QZ3yGdUVEsgyw5GrurbGs87TQQYp4A-qzTwk8iIlevK1DmEyz6HB80-Y_SBg3COewcYma73DjjjnjTKT4zD6okyoH7ZjgHmIQjeWIi3wCoqfBDZx50cqerc_J0V1h0klM"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-primary/90 translate-y-full group-hover:translate-y-0 transition-transform flex justify-center gap-4">
+<a class="text-white hover:text-secondary-fixed-dim" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-white hover:text-secondary-fixed-dim" href="#"><span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Nguyễn Hoàng Nam</h4>
+<p class="font-label-caps text-[12px] text-primary mb-3">CHỦ TỊCH &amp; TỔNG GIÁM ĐỐC</p>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Hơn 25 năm kinh nghiệm dẫn dắt các tập đoàn công nghệ đa quốc gia (MNCs) và quản trị rủi ro hệ thống tại thị trường Bắc Mỹ và Châu Á.</p>
+</div>
+<!-- Member 2 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional studio headshot of a confident female executive in her early 40s, wearing a modern navy blue blazer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_H0vsOzuRQAeR681yDHyEFed7ccj31yzdPar9neUUGcF4TkLI0TLXFBgMifd6olNP5b6iLvLbSwU7PqzqKGwmKKlW2vLmh-WRWN6Rnf_FA0VRHuCA-zSbui4gPPCb_TafUaDjPIQNKpwIWufCKTlnlpue38QeoA3WhBcoTCQk1JarG1i1ivVoNy2_aosdXVuAZ_IrF7ex8i0p8LJ0pxnIIuxPwE8JLH8yOYU9IaT6LUX4wvCdUsfd6DBNqHUhACL1bFex8WvQrIY"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-primary/90 translate-y-full group-hover:translate-y-0 transition-transform flex justify-center gap-4">
+<a class="text-white hover:text-secondary-fixed-dim" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-white hover:text-secondary-fixed-dim" href="#"><span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Trần Thu Hằng</h4>
+<p class="font-label-caps text-[12px] text-primary mb-3">GIÁM ĐỐC CÔNG NGHỆ</p>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Chuyên gia hàng đầu về Trí tuệ nhân tạo (AI) và Chuyển đổi số. Từng giữ vị trí Giám đốc Kỹ thuật tại Top 5 tập đoàn công nghệ toàn cầu, sở hữu hơn 20 bằng sáng chế quốc tế.</p>
+</div>
+<!-- Member 3 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sharp, professional studio portrait of a male executive in his mid 30s, wearing a smart-casual blazer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6YK1kZA60lYFR3lpWcLQ6ggjumX2ui79KJDfJ3UQVz7tp3s66LYHRyzAZMdpzC8AcXzQ1uVhvU17krGNYRKR4DuJEB3SY4RLBuMZOPbKWo91lU7fOfjrzmY6RIeIjn4ccoLpU8fLrbamN_zzuPU63AH6nLQJVuE0T_LppT4iDiP0IKGk_JgZTdQQqhClevTu22SSvpA8D7rUcCcUES0a_mC8rdDO25XOjDBEOeyody7fyf9J21iSBY6vaLxuLXv0FYIXTcE0_DGU"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-primary/90 translate-y-full group-hover:translate-y-0 transition-transform flex justify-center gap-4">
+<a class="text-white hover:text-secondary-fixed-dim" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-white hover:text-secondary-fixed-dim" href="#"><span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-1">David Smith</h4>
+<p class="font-label-caps text-[12px] text-primary mb-3">GIÁM ĐỐC ĐẦU TƯ</p>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Cựu Giám đốc chiến lược và Quản lý danh mục đầu tư tại các định chế tài chính hàng đầu Phố Wall. Chuyên gia định giá và M&amp;A xuyên quốc gia.</p>
+</div>
+<!-- Member 4 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional portrait of a senior female executive in her 50s with an air of authority and grace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvBqIN6OCIC68I0tB6pqiO5-eFhgpFmKn7YvT_J7e5JjGpzhl-4WoBd6SfgKOnK9fAhvDb2MgBMnVzWIBKvi_hnjnR4L8lxdrZy7llMO6CiYR2MdXBd3rK_TF8wkRAGxg7KKw0Ty9vxYZB5ErrjCsLBzgiD5L784_0iPdGbLWs0hkdPW2XihOXy8SbBbX-hxPzbyHtm-s61Y7QRz7kltgktyp2Bv8x8nXlOZ6o4Az7NuhhFkuFadSfRZWGdO6xRXBBcgccaatTCoY"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-primary/90 translate-y-full group-hover:translate-y-0 transition-transform flex justify-center gap-4">
+<a class="text-white hover:text-secondary-fixed-dim" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-white hover:text-secondary-fixed-dim" href="#"><span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Elena Petrova</h4>
+<p class="font-label-caps text-[12px] text-primary mb-3">GIÁM ĐỐC VẬN HÀNH TOÀN CẦU</p>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Hơn 15 năm kinh nghiệm tối ưu hóa chuỗi cung ứng và vận hành toàn cầu. Định hình chiến lược đối ngoại và mở rộng thị trường tại Châu Âu và Nam Mỹ.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 xl:py-24 bg-on-background relative overflow-hidden">
+<div class="max-w-screen-xl mx-auto px-6 xl:px-10 text-center relative z-10">
+<h2 class="font-headline-md text-white mb-6">Bạn muốn đồng hành cùng Aureus Global?</h2>
+<p class="font-body-lg text-surface-variant mb-10 max-w-2xl mx-auto">Chúng tôi luôn tìm kiếm những đối tác chiến lược và tài năng xuất sắc để cùng xây dựng tương lai bền vững.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-primary-container text-white px-10 py-4 rounded-lg font-label-caps text-label-caps hover:bg-primary transition-all">GIA NHẬP ĐỘI NGŨ</button>
+<button class="border border-white/30 text-white px-10 py-4 rounded-lg font-label-caps text-label-caps hover:bg-white/10 transition-all">LIÊN HỆ ĐỐI TÁC</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer-section pt-14 pb-0" id="footer" aria-label="Site footer">
+      <div class="max-w-screen-xl mx-auto px-6 xl:px-10">
+
+        <!-- Main grid: brand + 6 columns -->
+        <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-[220px_1fr_1fr_1fr_1fr_1fr_1fr] gap-x-6 gap-y-10 pb-12">
+
+          <!-- Brand Column -->
+          <div class="col-span-2 md:col-span-4 xl:col-span-1">
+            <img src="logo-aureus-global.png" alt="Aureus Global" style="height:52px; mix-blend-mode:multiply; margin-bottom:14px;" />
+            <p class="text-[12px] text-gray-500 leading-relaxed mb-6 max-w-[190px]">
+              Building the future ecosystem through technology, data and sustainable investments.
+            </p>
+            <!-- Social icons -->
+            <div class="flex gap-2.5" aria-label="Social media links">
+              <a href="#" class="footer-social" aria-label="LinkedIn">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" class="footer-social" aria-label="Twitter/X">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="#" class="footer-social" aria-label="Facebook">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 1: ECOSYSTEM -->
+          <div>
+            <p class="footer-col-head">Hệ Sinh Thái</p>
+            <ul class="space-y-2.5">
+              <li><a href="#companies" class="footer-link">Aureus Lab</a></li>
+              <li><a href="#companies" class="footer-link">DIP Tech</a></li>
+              <li><a href="#companies" class="footer-link">Aureus Digital</a></li>
+              <li><a href="#companies" class="footer-link">Aureus Ventures</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 2: TECHNOLOGY -->
+          <div>
+            <p class="footer-col-head">Công nghệ</p>
+            <ul class="space-y-2.5">
+              <li><a href="#technology" class="footer-link">AI &amp; Dữ liệu</a></li>
+              <li><a href="#technology" class="footer-link">Nghiên cứu &amp; Đổi mới</a></li>
+              <li><a href="#technology" class="footer-link">Giải pháp</a></li>
+              <li><a href="#technology" class="footer-link">Nền tảng</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: INVESTMENT -->
+          <div>
+            <p class="footer-col-head">Đầu tư</p>
+            <ul class="space-y-2.5">
+              <li><a href="#investment" class="footer-link">Vốn Đầu tư Mạo hiểm</a></li>
+              <li><a href="#investment" class="footer-link">Danh mục Đầu tư</a></li>
+              <li><a href="#investment" class="footer-link">Tiêu chí Đầu tư</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: INVESTOR RELATIONS -->
+          <div>
+            <p class="footer-col-head">Quan hệ Cổ đông</p>
+            <ul class="space-y-2.5">
+              <li><a href="#investor" class="footer-link">Tổng quan</a></li>
+              <li><a href="#investor" class="footer-link">Báo cáo Tài chính</a></li>
+              <li><a href="#investor" class="footer-link">Thuyết trình</a></li>
+              <li><a href="#investor" class="footer-link">ESG &amp; Phát triển Bền vững</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 5: ABOUT US -->
+          <div>
+            <p class="footer-col-head">Về Chúng Tôi</p>
+            <ul class="space-y-2.5">
+              <li><a href="#" class="footer-link">Về chúng tôi</a></li>
+              <li><a href="#" class="footer-link">Tầm nhìn &amp; Sứ mệnh</a></li>
+              <li><a href="#" class="footer-link">Giá trị cốt lõi</a></li>
+              <li><a href="#" class="footer-link">Ban lãnh đạo</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 6: CAREERS -->
+          <div>
+            <p class="footer-col-head">Tuyển dụng</p>
+            <ul class="space-y-2.5">
+              <li><a href="#" class="footer-link">Văn hóa</a></li>
+              <li><a href="#" class="footer-link">Cơ hội nghề nghiệp</a></li>
+              <li><a href="#" class="footer-link">Phát triển sự nghiệp</a></li>
+            </ul>
+          </div>
+
+        </div><!-- /main grid -->
+
+        <!-- Bottom bar -->
+        <div class="border-t border-gray-200 py-5 flex flex-col lg:flex-row items-center justify-between gap-3">
+          <!-- Left: copyright -->
+          <p class="text-[11px] text-gray-400 order-2 lg:order-1">
+            © 2025 AUREUS GLOBAL. All rights reserved.
+          </p>
+          <!-- Center: legal links -->
+          <div class="flex items-center gap-4 order-1 lg:order-2">
+            <a href="#" class="text-[11px] text-gray-400 hover:text-[#1a56db] transition-colors">Chính sách Bảo mật</a>
+            <span class="text-gray-300 text-xs">|</span>
+            <a href="#" class="text-[11px] text-gray-400 hover:text-[#1a56db] transition-colors">Điều khoản Sử dụng</a>
+            <span class="text-gray-300 text-xs">|</span>
+            <a href="#" class="text-[11px] text-gray-400 hover:text-[#1a56db] transition-colors">Chính sách Cookie</a>
+          </div>
+          <!-- Right: contact info -->
+          <div class="flex items-center gap-4 order-3">
+            <a href="mailto:contact@aureus.global" class="text-[11px] text-gray-500 hover:text-[#1a56db] transition-colors flex items-center gap-1.5">
+              <svg class="w-3 h-3 text-[#1a56db]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              contact@aureus.global
+            </a>
+            <a href="tel:+842873108888" class="text-[11px] text-gray-500 hover:text-[#1a56db] transition-colors flex items-center gap-1.5">
+              <svg class="w-3 h-3 text-[#1a56db]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +84 28 7310 8888
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+<script>
+    // Simple scroll animation for timeline dots
+    document.addEventListener('scroll', () => {
+        const dots = document.querySelectorAll('.timeline-line > div > div:nth-child(2)');
+        dots.forEach(dot => {
+            const rect = dot.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) {
+                dot.classList.add('scale-150');
+                dot.classList.add('shadow-[0_0_15px_rgba(0,61,155,0.5)]');
+            } else {
+                dot.classList.remove('scale-150');
+                dot.classList.remove('shadow-[0_0_15px_rgba(0,61,155,0.5)]');
+            }
+        });
+    });
+</script>
+    <script src="main.js" defer></script>
+</body></html>

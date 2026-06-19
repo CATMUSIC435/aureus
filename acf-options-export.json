@@ -1,0 +1,345 @@
+[
+    {
+        "key": "group_aureus_options",
+        "title": "Tùy chỉnh Theme (Header & Footer)",
+        "fields": [
+            {
+                "key": "field_pl6o60mna",
+                "label": "Tab Header",
+                "name": "tab_header",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_y0oobr2tc",
+                "label": "Chữ Placeholder Tìm Kiếm",
+                "name": "header_search_placeholder",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Tìm kiếm..."
+            },
+            {
+                "key": "field_rydequ427",
+                "label": "Tab Footer (Chung)",
+                "name": "tab_footer_general",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_o0ilt8k6a",
+                "label": "Mô tả Footer (Dưới Logo)",
+                "name": "footer_description",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 3
+            },
+            {
+                "key": "field_xly1hq6p9",
+                "label": "Mạng xã hội (Socials)",
+                "name": "footer_socials",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Thêm dòng mới",
+                "sub_fields": [
+                    {
+                        "key": "field_oftbln6wt",
+                        "label": "Icon (Mã SVG)",
+                        "name": "icon_svg",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "rows": 3
+                    },
+                    {
+                        "key": "field_5bslz8wq1",
+                        "label": "Đường link (URL)",
+                        "name": "link",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    }
+                ]
+            },
+            {
+                "key": "field_nkwurjjra",
+                "label": "Tab Cột Menu (Footer Columns)",
+                "name": "tab_footer_cols",
+                "type": "tab",
+                "instructions": "Lưu ý: Để sửa các đường link bên trong cột, vui lòng vào \"Giao diện > Menu\". Dưới đây chỉ là chỗ đổi Tên cột.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_jqdabjfh8",
+                "label": "Tiêu đề Cột 1",
+                "name": "footer_col_1_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Hệ Sinh Thái"
+            },
+            {
+                "key": "field_09eye8ukx",
+                "label": "Tiêu đề Cột 2",
+                "name": "footer_col_2_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Công nghệ"
+            },
+            {
+                "key": "field_3hua28ksf",
+                "label": "Tiêu đề Cột 3",
+                "name": "footer_col_3_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Đầu tư"
+            },
+            {
+                "key": "field_mr0yjeepn",
+                "label": "Tiêu đề Cột 4",
+                "name": "footer_col_4_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Quan hệ Cổ đông"
+            },
+            {
+                "key": "field_lyeaz40o0",
+                "label": "Tiêu đề Cột 5",
+                "name": "footer_col_5_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Về Chúng Tôi"
+            },
+            {
+                "key": "field_0hl9rfhhs",
+                "label": "Tiêu đề Cột 6",
+                "name": "footer_col_6_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Tuyển dụng"
+            },
+            {
+                "key": "field_4yz3k5ccx",
+                "label": "Tab Bản quyền & Liên hệ",
+                "name": "tab_footer_legal",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_mxqhaxj4e",
+                "label": "Dòng Bản quyền (Copyright)",
+                "name": "footer_copyright",
+                "type": "text",
+                "instructions": "Sử dụng {year} để hiển thị năm hiện tại tự động.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "© {year} AUREUS GLOBAL. All rights reserved."
+            },
+            {
+                "key": "field_u1jnggrem",
+                "label": "Các link pháp lý (Chính sách...)",
+                "name": "footer_legal_links",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Thêm dòng mới",
+                "sub_fields": [
+                    {
+                        "key": "field_h0gzntx8k",
+                        "label": "Tiêu đề",
+                        "name": "title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_1hmtrfokh",
+                        "label": "Đường link (URL)",
+                        "name": "url",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    }
+                ]
+            },
+            {
+                "key": "field_lxx2ar4t9",
+                "label": "Email Liên hệ",
+                "name": "contact_email",
+                "type": "email",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "contact@aureus.global"
+            },
+            {
+                "key": "field_0n36eq54l",
+                "label": "Số điện thoại Liên hệ",
+                "name": "contact_phone",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "+84 28 7310 8888"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "theme-general-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Cấu hình các thành phần dùng chung như Header và Footer"
+    }
+]

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AUREUS GLOBAL | Hệ sinh thái</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#161c27",
+                    "secondary-fixed-dim": "#75d1ff",
+                    "on-primary-fixed": "#001848",
+                    "tertiary-fixed": "#ffdad6",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#dde2f3",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#b90010",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c3c6d6",
+                    "surface-dim": "#d4daea",
+                    "on-tertiary-container": "#ffc5be",
+                    "on-tertiary-fixed-variant": "#93000a",
+                    "surface-container-high": "#e3e8f9",
+                    "surface-container-highest": "#dde2f3",
+                    "surface-tint": "#0c56d0",
+                    "on-secondary-container": "#004b65",
+                    "background": "#f9f9ff",
+                    "primary-fixed": "#dae2ff",
+                    "secondary": "#006688",
+                    "primary-fixed-dim": "#b2c5ff",
+                    "secondary-fixed": "#c2e8ff",
+                    "surface-container": "#e8eeff",
+                    "primary": "#003d9b",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f9f9ff",
+                    "primary-container": "#0052cc",
+                    "tertiary": "#8c0009",
+                    "surface-container-low": "#f1f3ff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#004d67",
+                    "inverse-surface": "#2a303d",
+                    "inverse-primary": "#b2c5ff",
+                    "outline": "#737685",
+                    "on-surface": "#161c27",
+                    "on-surface-variant": "#434654",
+                    "tertiary-fixed-dim": "#ffb4ab",
+                    "inverse-on-surface": "#ecf0ff",
+                    "secondary-container": "#00c1fd",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#410002",
+                    "on-primary-container": "#c4d2ff",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f9f9ff",
+                    "on-primary-fixed-variant": "#0040a2",
+                    "on-secondary-fixed": "#001e2b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "100px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "element-gap": "32px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"],
+                    "display-lg-mobile": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "display-lg": ["Be Vietnam Pro"],
+                    "headline-sm": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "label-caps": ["11px", {"lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                    "headline-sm": ["15px", {"lineHeight": "1.4", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 70% 30%, #e8eeff 0%, #f9f9ff 100%);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .floating { animation: float 6s ease-in-out infinite; }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-white">
+  <!-- ═══════════════════════════════════════════ NAVBAR ═══════════════════════════════════════════ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300">
+    <div class="max-w-screen-xl mx-auto px-4 xl:px-6">
+      <div class="flex items-center h-16 xl:h-[68px] gap-6 xl:gap-8">
+
+        <!-- ── Logo ── -->
+        <a id="logo" href="#" class="flex items-center gap-2 shrink-0 mr-2 xl:mr-6">
+          <img
+            src="logo-aureus-global.png"
+            alt="Aureus Global"
+            class="h-9 xl:h-10 w-auto object-contain"
+            onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
+          />
+          <!-- Fallback SVG logo if image not found -->
+          <div id="logo-fallback" style="display:none;" class="flex items-center gap-2">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="18,2 32,30 4,30" fill="none" stroke="#1a56db" stroke-width="3.5"/>
+              <polygon points="18,14 24,26 12,26" fill="#e02424"/>
+              <rect x="22" y="10" width="12" height="10" rx="2" fill="#e02424" opacity="0.9"/>
+              <rect x="25" y="13" width="6" height="6" rx="1" fill="#fff"/>
+            </svg>
+            <div class="leading-tight">
+              <span class="block text-sm font-bold tracking-wider text-aureus-blue uppercase">Aureus</span>
+              <span class="block text-xs font-bold tracking-widest text-aureus-red uppercase">Global</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ── Desktop Nav Links ── -->
+        <nav id="desktop-nav" class="hidden xl:flex items-center gap-1 flex-1">
+          <a href="index.html" data-nav="HOME"               class="nav-link active text-[11px] font-semibold uppercase text-gray-800 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Trang chủ</a>
+          <a href="index2.html" data-nav="ECOSYSTEM"          class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Hệ Sinh Thái</a>
+          <a href="index4.html" data-nav="TECHNOLOGY"         class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Công Nghệ</a>
+          <a href="index3.html" data-nav="INVESTMENT"         class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Đầu Tư</a>
+          <a href="index5.html" data-nav="ABOUT US"           class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Về Chúng Tôi</a>
+          <a href="index6.html" data-nav="INVESTOR RELATIONS" class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Quan hệ Cổ đông</a>
+          <a href="index7.html" data-nav="NEWS"               class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Tin tức</a>
+          <a href="index8.html" data-nav="CAREERS"            class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Tuyển dụng</a>
+        </nav>
+
+        <!-- ── Right Actions ── -->
+        <div class="hidden xl:flex items-center gap-3 ml-auto shrink-0">
+
+          <!-- Language Selector -->
+          <div class="relative" id="lang-wrapper">
+            <button
+              id="lang-btn"
+              class="flex items-center gap-1.5 text-[11px] font-semibold text-gray-600 uppercase hover:text-aureus-blue transition-colors duration-200 px-2 py-1"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <!-- Globe icon -->
+              <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span id="lang-label">EN</span>
+              <svg id="lang-chevron" class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div id="lang-dropdown" class="lang-dropdown" role="listbox">
+              <div class="lang-option" data-lang="EN" data-langcode="en" role="option" tabindex="0">🇺🇸 English</div>
+              <div class="lang-option" data-lang="VI" data-langcode="vi" role="option" tabindex="0">🇻🇳 Tiếng Việt</div>
+            </div>
+          </div>
+
+          <!-- Contact Us Button -->
+          <a
+            id="contact-btn"
+            href="#contact"
+            class="contact-btn flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-aureus-blue border border-aureus-blue rounded px-4 py-2 hover:bg-aureus-blue hover:text-white transition-all duration-300"
+          >
+            Liên hệ
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- ── Mobile Hamburger ── -->
+        <button
+          id="hamburger"
+          class="xl:hidden ml-auto flex flex-col justify-center gap-[5px] p-2 rounded"
+          aria-label="Toggle menu"
+        >
+          <span id="ham-1" class="block h-0.5 w-6 bg-gray-700 rounded transition-all duration-300 origin-center"></span>
+          <span id="ham-2" class="block h-0.5 w-6 bg-gray-700 rounded transition-all duration-300"></span>
+          <span id="ham-3" class="block h-0.5 w-6 bg-gray-700 rounded transition-all duration-300 origin-center"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ── Mobile Menu ── -->
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html" class="text-xs font-semibold uppercase tracking-wider text-aureus-blue px-6 py-3 border-b border-gray-100">Trang chủ</a>
+      <a href="index2.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Hệ Sinh Thái</a>
+      <a href="index4.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Công Nghệ</a>
+      <a href="index3.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Đầu Tư</a>
+      <a href="index5.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Về Chúng Tôi</a>
+      <a href="index6.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Quan hệ Cổ đông</a>
+      <a href="index7.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Tin tức</a>
+      <a href="index8.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Tuyển dụng</a>
+      <div class="px-6 pt-4 pb-5 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-xs font-semibold text-gray-600">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          EN
+        </div>
+        <a href="#contact" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-aureus-blue border border-aureus-blue rounded px-4 py-2">
+          Contact Us
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+<main class="pt-20 xl:pt-[68px]">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center hero-gradient overflow-hidden px-6 xl:px-10">
+<div class="max-w-screen-xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 text-primary uppercase tracking-[0.2em] font-bold text-xs">
+<span class="w-8 h-[2px] bg-primary"></span>
+                        TRÍ TUỆ. ĐỔI MỚI. TÁC ĐỘNG.
+                    </div>
+<h1 class="font-display-lg text-display-lg md:text-display-lg-mobile lg:text-display-lg text-on-background leading-tight">
+                        Kiến tạo <br/>
+<span class="text-primary">Hệ sinh thái Tương lai</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        AUREUS GLOBAL kiến tạo và vận hành hệ sinh thái công nghệ toàn diện dựa trên trí tuệ nhân tạo, dữ liệu và đổi mới sáng tạo, mang lại giá trị bền vững cho doanh nghiệp và xã hội.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary-container text-white px-8 py-4 rounded-lg flex items-center gap-3 font-label-caps text-label-caps hover:bg-primary transition-all group">
+                            KHÁM PHÁ HỆ SINH THÁI 
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<button class="border border-outline-variant text-on-background px-8 py-4 rounded-lg flex items-center gap-3 font-label-caps text-label-caps hover:bg-surface-container transition-all">
+                            QUAN HỆ NHÀ ĐẦU TƯ
+                            <span class="material-symbols-outlined">north_east</span>
+</button>
+</div>
+</div>
+<div class="relative flex justify-center items-center">
+<!-- A5 Visual Anchor -->
+<div class="relative w-full aspect-square max-w-md floating">
+<div class="absolute inset-0 bg-primary/10 blur-[120px] rounded-full"></div>
+<img class="w-full h-full object-contain relative z-10" data-alt="A futuristic 3D metallic glass structure of the characters 'A5' in a deep blue and vibrant red gradient. The scene is illuminated by soft cinematic studio lighting with sharp reflections on the chrome edges, set against a pristine minimalist white background for a high-end corporate tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZu7EdNFB2mBZVpihlAqcHnBTiml-Vdva2ugu6I-My6aJ-Gvv3PSwmm_61HdCf5aWvuh8nNUvFEWutERaCdeg_suFFHOhU-CeEPZt_GTsC2EEtiaOrFT6W1jQ1jLLEheCL2n_BRYmHu9dJW0boCy2CL9ihAcCDmVfig_36WR_ITkCJNWXeloYKvACuH93FeaKVcqim-3F-HD-TMbUzmdal5GCjz5howjVmPzkrqQia1SxY9qoC6N8wJbYVBsKwTYV5r12MLSvs4fE"/>
+</div>
+<!-- Stats Floating Card -->
+<div class="absolute -bottom-10 -left-10 glass-card p-6 rounded-xl shadow-lg z-20 md:block hidden">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<div class="text-headline-md font-bold text-on-background">120+</div>
+<div class="text-xs text-on-surface-variant font-label-caps uppercase">DỰ ÁN AI</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-1/4 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-1/4 left-10 w-48 h-48 bg-secondary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Connectivity Core -->
+<section class="py-16 xl:py-24 px-6 xl:px-10 bg-white">
+<div class="max-w-screen-xl mx-auto text-center mb-element-gap">
+<h2 class="font-headline-md text-headline-md text-on-background mb-4">Một Tầm nhìn. Synergy Vô hạn.</h2>
+<p class="text-on-surface-variant max-w-3xl mx-auto font-body-lg">
+                    Hệ sinh thái AUREUS GLOBAL được vận hành như một cơ chế đồng bộ trên quy mô toàn cầu. Sự hội tụ giữa trí tuệ nhân tạo, công nghệ lõi và nguồn vốn chiến lược tạo ra chuỗi giá trị đột phá, định hình các tiêu chuẩn mới cho tương lai công nghệ quốc tế.
+                </p>
+</div>
+<div class="relative max-w-4xl mx-auto aspect-square md:aspect-video flex items-center justify-center">
+<!-- Center Node -->
+<div class="z-20 w-48 h-48 rounded-full glass-card flex flex-col items-center justify-center text-center p-4 border-2 border-primary/20 shadow-2xl">
+<div class="text-primary font-bold text-headline-sm mb-1">A5</div>
+<div class="text-[10px] font-label-caps uppercase tracking-widest text-on-surface-variant leading-none">AUREUS GLOBAL</div>
+</div>
+<!-- Orbital Elements -->
+<div class="absolute inset-0 border-[1px] border-dashed border-outline-variant/50 rounded-full animate-[spin_60s_linear_infinite]"></div>
+<!-- Pillar 1: Aureus Lab -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-y-0 group">
+<div class="flex flex-col items-center gap-4 transition-all duration-500 group-hover:scale-105">
+<div class="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center text-primary border border-outline-variant/30">
+<span class="material-symbols-outlined text-display-lg-mobile">biotech</span>
+</div>
+<div class="text-center">
+<div class="font-bold text-sm">AUREUS LAB</div>
+<div class="text-[10px] text-on-surface-variant uppercase">R&amp;D — AI — Công nghệ lõi</div>
+</div>
+</div>
+</div>
+<!-- Pillar 2: Dip Tech -->
+<div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 group">
+<div class="flex items-center gap-4 transition-all duration-500 group-hover:scale-105">
+<div class="text-right hidden md:block">
+<div class="font-bold text-sm">DIP TECH</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Giải pháp Doanh nghiệp</div>
+</div>
+<div class="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center text-secondary border border-outline-variant/30">
+<span class="material-symbols-outlined text-display-lg-mobile">layers</span>
+</div>
+</div>
+</div>
+<!-- Pillar 3: Aureus Digital -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 md:-translate-y-0 group">
+<div class="flex flex-col items-center gap-4 transition-all duration-500 group-hover:scale-105">
+<div class="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center text-primary-container border border-outline-variant/30">
+<span class="material-symbols-outlined text-display-lg-mobile">monitoring</span>
+</div>
+<div class="text-center">
+<div class="font-bold text-sm">AUREUS DIGITAL</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Tăng trưởng &amp; Marketing</div>
+</div>
+</div>
+</div>
+<!-- Pillar 4: Aureus Ventures -->
+<div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 group">
+<div class="flex items-center gap-4 transition-all duration-500 group-hover:scale-105">
+<div class="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center text-tertiary border border-outline-variant/30">
+<span class="material-symbols-outlined text-display-lg-mobile">payments</span>
+</div>
+<div class="text-left hidden md:block">
+<div class="font-bold text-sm">AUREUS VENTURES</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Đầu tư Công nghệ</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Global Metrics -->
+<section class="bg-surface-container py-16 xl:py-24 px-6 xl:px-10 border-y border-outline-variant/20">
+<div class="max-w-screen-xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8">
+<div class="text-center">
+<div class="text-display-lg-mobile font-bold text-primary mb-1">120+</div>
+<div class="text-[10px] font-label-caps text-on-surface-variant uppercase">DỰ ÁN AI</div>
+</div>
+<div class="text-center">
+<div class="text-display-lg-mobile font-bold text-primary mb-1">250+</div>
+<div class="text-[10px] font-label-caps text-on-surface-variant uppercase">KHÁCH HÀNG DOANH NGHIỆP</div>
+</div>
+<div class="text-center">
+<div class="text-display-lg-mobile font-bold text-primary mb-1">15PB+</div>
+<div class="text-[10px] font-label-caps text-on-surface-variant uppercase">TÀI SẢN DỮ LIỆU</div>
+</div>
+<div class="text-center">
+<div class="text-display-lg-mobile font-bold text-primary mb-1">4</div>
+<div class="text-[10px] font-label-caps text-on-surface-variant uppercase">CÔNG TY</div>
+</div>
+<div class="text-center">
+<div class="text-display-lg-mobile font-bold text-primary mb-1">500+</div>
+<div class="text-[10px] font-label-caps text-on-surface-variant uppercase">NHÂN SỰ</div>
+</div>
+<div class="text-center">
+<div class="text-display-lg-mobile font-bold text-primary mb-1">10+</div>
+<div class="text-[10px] font-label-caps text-on-surface-variant uppercase">QUỐC GIA</div>
+</div>
+</div>
+</section>
+<!-- Core Pillars (Bento Grid Style) -->
+<section class="py-16 xl:py-24 px-6 xl:px-10 bg-background">
+<div class="max-w-screen-xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<div class="text-primary font-label-caps text-label-caps mb-4 uppercase">CÁC CÔNG TY THÀNH VIÊN</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4">Bốn trụ cột cốt lõi.<br/>Một Hệ sinh thái Vững mạnh.</h2>
+<p class="text-on-surface-variant font-body-md">Bốn công ty thành viên — bốn năng lực cốt lõi — một hệ sinh thái hợp lực để dẫn dắt tương lai.</p>
+</div>
+<a class="text-primary font-label-caps text-label-caps flex items-center gap-2 hover:underline decoration-2 underline-offset-8" href="#">
+                        XEM TẤT CẢ CÔNG TY <span class="material-symbols-outlined">trending_flat</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+<div class="h-48 overflow-hidden rounded-t-lg relative mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-tech laboratory setting with research scientists working on holographic interfaces displaying complex neural networks. The environment is sterile, modern, and brightly lit with cool blue surgical lighting, conveying cutting-edge AI development and R&amp;D precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkCeWi5w1ivCO8k-aZpv12WTvztSv0NJMGcPJwzGu0y3KNn1PpIVeikIG_xJcvX7cP1Rg3Clc_qkbp-Oif6jnR5KJhrJQuB5GN-lJy0Yx_B9_Xx8S3Ad-fhSHJKRf6qZ2IDC82f6nnm92CjBBtX8sD4F1Kr6k7IyDLSqss2T2a992MOGexsmqaobK8NylIbqGauyM98rCGkvwYtbgHIE2LgKHXLEhM5zlcZoTBvA8C3Y-0cRwc58dIOWrtBdVN8fSi7D4EejvyRzs"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Lab</div>
+</div>
+<div class="px-6 pb-8 flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-3">AUREUS LAB</h3>
+<p class="text-on-surface-variant text-sm mb-4 flex-grow">Nghiên cứu, phát triển AI, Machine Learning, Big Data và các công nghệ cốt lõi phục vụ hệ sinh thái toàn cầu.</p>
+<div class="mb-8 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Generative AI &amp; NLP</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Điện toán Lượng tử</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Kiến trúc Hệ thống Phức hợp</div>
+</div>
+<a class="text-primary font-label-caps text-label-caps flex items-center gap-2 group/btn mt-auto" href="#">
+                                TÌM HIỂU THÊM <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+<div class="h-48 overflow-hidden rounded-t-lg relative mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sophisticated server room or data center with sleek, black metallic server racks and glowing cyan LED indicators. The composition uses a low-angle shot to emphasize scale and technological power, bathed in a soft industrial blue glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyQ-25RdaK8feY3GPRHU9U79vp8mNtJPo_qS5LSIMScnypO_fdohvC3vDNdgvbb_VfVNv2xvGYUHIvhvk2Ty3c9pnnEBqwcozf4URM7xR8jPoF7j8XuVyeAt36gluc57uT7JGEbUOwQhAelRWF1Lds09umSCjXEc8TunZEdUBLZz8bziNSpvF3P4qvuprxQ2u1jGJj_oDzKygCtTareanGUXn4DYgKYHkrHxKmrWwDdWKFBN2UAzZArV7FNxFb4Sb8lfZETBthjA0"/>
+<div class="absolute top-4 left-4 bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Doanh nghiệp</div>
+</div>
+<div class="px-6 pb-8 flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-3">DIP TECH</h3>
+<p class="text-on-surface-variant text-sm mb-4 flex-grow">Cung cấp giải pháp công nghệ và vận hành cho doanh nghiệp và tổ chức quy mô lớn xuyên biên giới.</p>
+<div class="mb-8 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-secondary">check_circle</span> Chuyển đổi số Toàn diện</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-secondary">check_circle</span> Hạ tầng Cloud &amp; Edge Computing</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-secondary">check_circle</span> An ninh Mạng Đa lớp</div>
+</div>
+<a class="text-primary font-label-caps text-label-caps flex items-center gap-2 group/btn mt-auto" href="#">
+                                TÌM HIỂU THÊM <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+<div class="h-48 overflow-hidden rounded-t-lg relative mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A modern creative workspace with digital designers working on multi-monitor setups showing vibrant data visualizations and UI/UX flows. The space is filled with warm natural light from large windows and features minimalist white furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwCKFpHjHyEhkkvrJj4SoqJsZxGeX7XO64_n7SxS4y5O0xgGYw-Z5gD_RV6OOzZQq0JWDsciBKn-x1x9uBcDY9W4B0KqUCJpMKOiSnalTTGQCPWQkNsC37rDjFUHO600TZi_5VdMTUepEqBBTpgngMYQP0Tjktxaclw1hBOfIOCBrctoGt8-mSETtC5b8bkqfyVqHhtTS_djjdwd1d8fUtPEVfanFIhDhxEmTdM9vLcL9LmzqtZl3eH7RHKwP6-Cu_TrubSMRObqU"/>
+<div class="absolute top-4 left-4 bg-primary-container text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Digital</div>
+</div>
+<div class="px-6 pb-8 flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-3">AUREUS DIGITAL</h3>
+<p class="text-on-surface-variant text-sm mb-4 flex-grow">Tăng trưởng thương hiệu và hiệu quả kinh doanh dựa trên dữ liệu lớn và công nghệ marketing hiện đại.</p>
+<div class="mb-8 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-primary-container">check_circle</span> Phân tích Dữ liệu Hành vi</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-primary-container">check_circle</span> Tự động hóa MarTech</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-primary-container">check_circle</span> Chiến lược Chuyển đổi O2O</div>
+</div>
+<a class="text-primary font-label-caps text-label-caps flex items-center gap-2 group/btn mt-auto" href="#">
+                                TÌM HIỂU THÊM <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-1 rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+<div class="h-48 overflow-hidden rounded-t-lg relative mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wide panoramic view of a futuristic city skyline featuring iconic corporate architecture with glass facades. The lighting suggests a sunrise or golden hour, casting long shadows and a hopeful, prosperous atmosphere representing global financial expansion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARJYv0zc0q-o4OoDlcHWOVs9OAK-idF7cBPzKOKvUaDwK5liLw-O0GgUNTKW2XPkg6e0I_6f53dmO5ldxkC6kwrzPpGIrurREE2OshrQ6xQgX44l3IQEZyQVvBMi6ubioeCmMDarPCcrwo-WjfNFviV1oBvyLxC7lG-5moJtZymkJPTMpgepzslWskmhn6XT-MmHX_Ca7rqNOzSJYmQZHXw0aWd3q7bYHTUNDvch9p41Z0TgyBd9Jn0ySKKimABdkJoZwPD-pSqMQ"/>
+<div class="absolute top-4 left-4 bg-tertiary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Ventures</div>
+</div>
+<div class="px-6 pb-8 flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-3">AUREUS VENTURES</h3>
+<p class="text-on-surface-variant text-sm mb-4 flex-grow">Đầu tư vào các công ty công nghệ tiềm năng, tạo giá trị dài hạn thông qua vốn và mạng lưới chiến lược toàn cầu.</p>
+<div class="mb-8 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-tertiary">check_circle</span> FinTech &amp; DeFi</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-tertiary">check_circle</span> Công nghệ Y tế (HealthTech)</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant"><span class="material-symbols-outlined text-sm text-tertiary">check_circle</span> Công nghệ Xanh &amp; Bền vững</div>
+</div>
+<a class="text-primary font-label-caps text-label-caps flex items-center gap-2 group/btn mt-auto" href="#">
+                                TÌM HIỂU THÊM <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Connection Map -->
+<section class="py-16 xl:py-24 px-6 xl:px-10 bg-on-background text-white overflow-hidden">
+<div class="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-md text-headline-md mb-6 leading-tight">Hiện diện Toàn cầu.<br/>Tiêu chuẩn Quốc tế.</h2>
+<p class="text-outline-variant font-body-lg mb-12">
+                        Mạng lưới AUREUS GLOBAL trải dài trên 3 châu lục với các phòng thí nghiệm, trung tâm dữ liệu và đối tác chiến lược hàng đầu. Chúng tôi triển khai các dự án quy mô lớn, từ hạ tầng AI đến giải pháp doanh nghiệp xuyên biên giới.
+                    </p>
+<div class="grid grid-cols-2 gap-12">
+<div>
+<div class="text-display-lg-mobile font-bold text-secondary-fixed-dim mb-2">10+</div>
+<div class="text-sm font-label-caps uppercase text-outline-variant">Quốc gia</div>
+</div>
+<div>
+<div class="text-display-lg-mobile font-bold text-secondary-fixed-dim mb-2">30+</div>
+<div class="text-sm font-label-caps uppercase text-outline-variant">Thành phố hiện diện</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12 mt-8">
+<div>
+<div class="text-display-lg-mobile font-bold text-secondary-fixed-dim mb-2">50+</div>
+<div class="text-sm font-label-caps uppercase text-outline-variant">Dự án Quốc tế</div>
+</div>
+<div>
+<div class="text-display-lg-mobile font-bold text-secondary-fixed-dim mb-2">3</div>
+<div class="text-sm font-label-caps uppercase text-outline-variant">Châu lục Hoạt động</div>
+</div>
+</div>
+<div class="mt-16 p-8 border border-outline-variant/20 rounded-xl bg-white/5 backdrop-blur-sm">
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 rounded-lg bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-display-lg-mobile text-secondary-fixed-dim">public</span>
+</div>
+<div>
+<h4 class="font-bold text-headline-sm mb-1">Tầm nhìn Toàn cầu</h4>
+<p class="text-sm text-outline-variant">Hợp tác chiến lược với các tập đoàn công nghệ hàng đầu thế giới để kiến tạo tiêu chuẩn mới.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative min-h-[400px] flex items-center justify-center">
+<!-- World Map Visualization Placeholder -->
+<div class="absolute inset-0 opacity-20">
+</div>
+<!-- Focal Points on Map (Simulated) -->
+<div class="relative w-full h-full flex items-center justify-center">
+<div class="w-4 h-4 bg-primary rounded-full animate-ping"></div>
+<div class="absolute top-1/4 left-1/3 w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+<div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-tertiary-fixed-dim rounded-full animate-pulse"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Strategic Partners Section -->
+<section class="py-16 xl:py-24 px-6 xl:px-10 bg-surface-container-low border-t border-outline-variant/20">
+<div class="max-w-screen-xl mx-auto text-center">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-8">ĐỐI TÁC CHIẾN LƯỢC TOÀN CẦU</h3>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2 font-display-lg text-headline-md font-bold text-on-surface-variant"><span class="material-symbols-outlined text-display-lg-mobile">cloud</span> CloudCore</div>
+<div class="flex items-center gap-2 font-display-lg text-headline-md font-bold text-on-surface-variant"><span class="material-symbols-outlined text-display-lg-mobile">memory</span> QuantumTech</div>
+<div class="flex items-center gap-2 font-display-lg text-headline-md font-bold text-on-surface-variant"><span class="material-symbols-outlined text-display-lg-mobile">public</span> GlobalNet</div>
+<div class="flex items-center gap-2 font-display-lg text-headline-md font-bold text-on-surface-variant"><span class="material-symbols-outlined text-display-lg-mobile">security</span> SecurAI</div>
+<div class="flex items-center gap-2 font-display-lg text-headline-md font-bold text-on-surface-variant"><span class="material-symbols-outlined text-display-lg-mobile">database</span> DataSphere</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="py-16 xl:py-24 px-6 xl:px-10 bg-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary-container/5 -skew-x-12 transform translate-x-1/2"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="font-headline-md text-headline-md text-on-background mb-6">Đồng hành cùng AUREUS GLOBAL</h2>
+<p class="text-on-surface-variant mb-10 max-w-xl mx-auto">Đăng ký nhận bản tin để cập nhật những công nghệ mới nhất và cơ hội đầu tư trong hệ sinh thái của chúng tôi.</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-grow px-6 py-4 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Địa chỉ email của bạn" type="email"/>
+<button class="bg-on-background text-white px-8 py-4 rounded-lg font-label-caps text-label-caps hover:bg-primary transition-all">ĐĂNG KÝ</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer-section pt-14 pb-0" id="footer" aria-label="Site footer">
+      <div class="max-w-screen-xl mx-auto px-6 xl:px-10">
+
+        <!-- Main grid: brand + 6 columns -->
+        <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-[220px_1fr_1fr_1fr_1fr_1fr_1fr] gap-x-6 gap-y-10 pb-12">
+
+          <!-- Brand Column -->
+          <div class="col-span-2 md:col-span-4 xl:col-span-1">
+            <img src="logo-aureus-global.png" alt="Aureus Global" style="height:52px; mix-blend-mode:multiply; margin-bottom:14px;" />
+            <p class="text-[12px] text-gray-500 leading-relaxed mb-6 max-w-[190px]">
+              Building the future ecosystem through technology, data and sustainable investments.
+            </p>
+            <!-- Social icons -->
+            <div class="flex gap-2.5" aria-label="Social media links">
+              <a href="#" class="footer-social" aria-label="LinkedIn">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" class="footer-social" aria-label="Twitter/X">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="#" class="footer-social" aria-label="Facebook">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 1: ECOSYSTEM -->
+          <div>
+            <p class="footer-col-head">Hệ Sinh Thái</p>
+            <ul class="space-y-2.5">
+              <li><a href="#companies" class="footer-link">Aureus Lab</a></li>
+              <li><a href="#companies" class="footer-link">DIP Tech</a></li>
+              <li><a href="#companies" class="footer-link">Aureus Digital</a></li>
+              <li><a href="#companies" class="footer-link">Aureus Ventures</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 2: TECHNOLOGY -->
+          <div>
+            <p class="footer-col-head">Công nghệ</p>
+            <ul class="space-y-2.5">
+              <li><a href="#technology" class="footer-link">AI &amp; Dữ liệu</a></li>
+              <li><a href="#technology" class="footer-link">Nghiên cứu &amp; Đổi mới</a></li>
+              <li><a href="#technology" class="footer-link">Giải pháp</a></li>
+              <li><a href="#technology" class="footer-link">Nền tảng</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: INVESTMENT -->
+          <div>
+            <p class="footer-col-head">Đầu tư</p>
+            <ul class="space-y-2.5">
+              <li><a href="#investment" class="footer-link">Vốn Đầu tư Mạo hiểm</a></li>
+              <li><a href="#investment" class="footer-link">Danh mục Đầu tư</a></li>
+              <li><a href="#investment" class="footer-link">Tiêu chí Đầu tư</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: INVESTOR RELATIONS -->
+          <div>
+            <p class="footer-col-head">Quan hệ Cổ đông</p>
+            <ul class="space-y-2.5">
+              <li><a href="#investor" class="footer-link">Tổng quan</a></li>
+              <li><a href="#investor" class="footer-link">Báo cáo Tài chính</a></li>
+              <li><a href="#investor" class="footer-link">Thuyết trình</a></li>
+              <li><a href="#investor" class="footer-link">ESG &amp; Phát triển Bền vững</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 5: ABOUT US -->
+          <div>
+            <p class="footer-col-head">Về Chúng Tôi</p>
+            <ul class="space-y-2.5">
+              <li><a href="#" class="footer-link">Về chúng tôi</a></li>
+              <li><a href="#" class="footer-link">Tầm nhìn &amp; Sứ mệnh</a></li>
+              <li><a href="#" class="footer-link">Giá trị cốt lõi</a></li>
+              <li><a href="#" class="footer-link">Ban lãnh đạo</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 6: CAREERS -->
+          <div>
+            <p class="footer-col-head">Tuyển dụng</p>
+            <ul class="space-y-2.5">
+              <li><a href="#" class="footer-link">Văn hóa</a></li>
+              <li><a href="#" class="footer-link">Cơ hội nghề nghiệp</a></li>
+              <li><a href="#" class="footer-link">Phát triển sự nghiệp</a></li>
+            </ul>
+          </div>
+
+        </div><!-- /main grid -->
+
+        <!-- Bottom bar -->
+        <div class="border-t border-gray-200 py-5 flex flex-col lg:flex-row items-center justify-between gap-3">
+          <!-- Left: copyright -->
+          <p class="text-[11px] text-gray-400 order-2 lg:order-1">
+            © 2025 AUREUS GLOBAL. All rights reserved.
+          </p>
+          <!-- Center: legal links -->
+          <div class="flex items-center gap-4 order-1 lg:order-2">
+            <a href="#" class="text-[11px] text-gray-400 hover:text-[#1a56db] transition-colors">Chính sách Bảo mật</a>
+            <span class="text-gray-300 text-xs">|</span>
+            <a href="#" class="text-[11px] text-gray-400 hover:text-[#1a56db] transition-colors">Điều khoản Sử dụng</a>
+            <span class="text-gray-300 text-xs">|</span>
+            <a href="#" class="text-[11px] text-gray-400 hover:text-[#1a56db] transition-colors">Chính sách Cookie</a>
+          </div>
+          <!-- Right: contact info -->
+          <div class="flex items-center gap-4 order-3">
+            <a href="mailto:contact@aureus.global" class="text-[11px] text-gray-500 hover:text-[#1a56db] transition-colors flex items-center gap-1.5">
+              <svg class="w-3 h-3 text-[#1a56db]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              contact@aureus.global
+            </a>
+            <a href="tel:+842873108888" class="text-[11px] text-gray-500 hover:text-[#1a56db] transition-colors flex items-center gap-1.5">
+              <svg class="w-3 h-3 text-[#1a56db]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +84 28 7310 8888
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+<script>
+        // Micro-interactions and scroll effects
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-sm');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2', 'shadow-sm');
+            }
+        });
+
+        // Simple observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+    <script src="main.js" defer></script>
+</body></html>

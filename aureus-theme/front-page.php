@@ -1,187 +1,14 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aureus Global – Building The Future Ecosystem</title>
-  <meta name="description" content="Aureus Global – Building The Future Ecosystem. Explore our Ecosystem, Technology, Investment, and more." />
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
-  <!-- Preconnect for external CDNs (Fonts, jQuery, GSAP) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://code.jquery.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="dns-prefetch" href="https://code.jquery.com" />
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+/**
+ * The front page template file
+ *
+ * @package Aureus_Global
+ */
 
-  <!-- TailwindCSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Tailwind config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            inter: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            'aureus-blue': '#1a56db',
-            'aureus-red': '#e02424',
-          },
-          keyframes: {
-            fadeInDown: {
-              '0%': { opacity: '0', transform: 'translateY(-6px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            },
-          },
-          animation: {
-            'fade-in-down': 'fadeInDown 0.2s ease forwards',
-          },
-        },
-      },
-    };
-  </script>
-
-  <!-- jQuery 3.7 -->
-  <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-
-  <!-- Lodash -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
-
-  <!-- GSAP CDN + ScrollTrigger -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css" />
-
-</head>
-<body class="bg-gray-50">
-
-  <!-- ═══════════════════════════════════════════ NAVBAR ═══════════════════════════════════════════ -->
-  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300">
-    <div class="max-w-screen-xl mx-auto px-4 xl:px-6">
-      <div class="flex items-center h-16 xl:h-[68px] gap-6 xl:gap-8">
-
-        <!-- ── Logo ── -->
-        <a id="logo" href="#" class="flex items-center gap-2 shrink-0 mr-2 xl:mr-6">
-          <img
-            src="logo-aureus-global.png"
-            alt="Aureus Global"
-            class="h-9 xl:h-10 w-auto object-contain"
-            onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
-          />
-          <!-- Fallback SVG logo if image not found -->
-          <div id="logo-fallback" style="display:none;" class="flex items-center gap-2">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="18,2 32,30 4,30" fill="none" stroke="#1a56db" stroke-width="3.5"/>
-              <polygon points="18,14 24,26 12,26" fill="#e02424"/>
-              <rect x="22" y="10" width="12" height="10" rx="2" fill="#e02424" opacity="0.9"/>
-              <rect x="25" y="13" width="6" height="6" rx="1" fill="#fff"/>
-            </svg>
-            <div class="leading-tight">
-              <span class="block text-sm font-bold tracking-wider text-aureus-blue uppercase">Aureus</span>
-              <span class="block text-xs font-bold tracking-widest text-aureus-red uppercase">Global</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- ── Desktop Nav Links ── -->
-        <nav id="desktop-nav" class="hidden xl:flex items-center gap-1 flex-1">
-          <a href="index.html" data-nav="HOME"               class="nav-link active text-[11px] font-semibold uppercase text-gray-800 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Trang chủ</a>
-          <a href="index2.html" data-nav="ECOSYSTEM"          class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Hệ Sinh Thái</a>
-          <a href="index4.html" data-nav="TECHNOLOGY"         class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Công Nghệ</a>
-          <a href="index3.html" data-nav="INVESTMENT"         class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Đầu Tư</a>
-          <a href="index5.html" data-nav="ABOUT US"           class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Về Chúng Tôi</a>
-          <a href="index6.html" data-nav="INVESTOR RELATIONS" class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Quan hệ Cổ đông</a>
-          <a href="index7.html" data-nav="NEWS"               class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Tin tức</a>
-          <a href="index8.html" data-nav="CAREERS"            class="nav-link text-[11px] font-semibold uppercase text-gray-600 px-2 py-1 hover:text-aureus-blue transition-colors duration-200">Tuyển dụng</a>
-        </nav>
-
-        <!-- ── Right Actions ── -->
-        <div class="hidden xl:flex items-center gap-3 ml-auto shrink-0">
-
-          <!-- Language Selector -->
-          <div class="relative" id="lang-wrapper">
-            <button
-              id="lang-btn"
-              class="flex items-center gap-1.5 text-[11px] font-semibold text-gray-600 uppercase hover:text-aureus-blue transition-colors duration-200 px-2 py-1"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <!-- Globe icon -->
-              <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-              <span id="lang-label">EN</span>
-              <svg id="lang-chevron" class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <path d="M6 9l6 6 6-6"/>
-              </svg>
-            </button>
-            <div id="lang-dropdown" class="lang-dropdown" role="listbox">
-              <div class="lang-option" data-lang="EN" data-langcode="en" role="option" tabindex="0">🇺🇸 English</div>
-              <div class="lang-option" data-lang="VI" data-langcode="vi" role="option" tabindex="0">🇻🇳 Tiếng Việt</div>
-            </div>
-          </div>
-
-          <!-- Contact Us Button -->
-          <a
-            id="contact-btn"
-            href="#contact"
-            class="contact-btn flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-aureus-blue border border-aureus-blue rounded px-4 py-2 hover:bg-aureus-blue hover:text-white transition-all duration-300"
-          >
-            Liên hệ
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path d="M5 12h14M13 6l6 6-6 6"/>
-            </svg>
-          </a>
-        </div>
-
-        <!-- ── Mobile Hamburger ── -->
-        <button
-          id="hamburger"
-          class="xl:hidden ml-auto flex flex-col justify-center gap-[5px] p-2 rounded"
-          aria-label="Toggle menu"
-        >
-          <span id="ham-1" class="block h-0.5 w-6 bg-gray-700 rounded transition-all duration-300 origin-center"></span>
-          <span id="ham-2" class="block h-0.5 w-6 bg-gray-700 rounded transition-all duration-300"></span>
-          <span id="ham-3" class="block h-0.5 w-6 bg-gray-700 rounded transition-all duration-300 origin-center"></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- ── Mobile Menu ── -->
-    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
-      <a href="index.html" class="text-xs font-semibold uppercase tracking-wider text-aureus-blue px-6 py-3 border-b border-gray-100">Trang chủ</a>
-      <a href="index2.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Hệ Sinh Thái</a>
-      <a href="index4.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Công Nghệ</a>
-      <a href="index3.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Đầu Tư</a>
-      <a href="index5.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Về Chúng Tôi</a>
-      <a href="index6.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Quan hệ Cổ đông</a>
-      <a href="index7.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Tin tức</a>
-      <a href="index8.html" class="text-xs font-semibold uppercase tracking-wider text-gray-600 px-6 py-3 border-b border-gray-100 hover:text-aureus-blue hover:bg-gray-50 transition-colors">Tuyển dụng</a>
-      <div class="px-6 pt-4 pb-5 flex items-center justify-between">
-        <div class="flex items-center gap-2 text-xs font-semibold text-gray-600">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-          EN
-        </div>
-        <a href="#contact" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-aureus-blue border border-aureus-blue rounded px-4 py-2">
-          Contact Us
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
-        </a>
-      </div>
-    </nav>
-  </header>
-
+get_header();
+?>
   <!-- ═══════════════════════════════════════════ HERO SECTION ═══════════════════════════════════════════ -->
   <main>
     <section id="hero" class="hero-section">
@@ -201,24 +28,27 @@
 
             <!-- Tag line -->
             <div id="hero-tag" class="flex items-center gap-0 mb-6">
-              <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-[#1a56db]">Intelligence</span>
+              <?php $tag_1 = function_exists('get_field') && get_field('hero_tag_1', 'option') ? get_field('hero_tag_1', 'option') : 'Intelligence'; ?>
+              <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-[#1a56db]"><?php echo esc_html($tag_1); ?></span>
               <span class="tag-dot bg-[#e02424] mx-2"></span>
-              <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-[#1a56db]">Innovation</span>
+              <?php $tag_2 = function_exists('get_field') && get_field('hero_tag_2', 'option') ? get_field('hero_tag_2', 'option') : 'Innovation'; ?>
+              <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-[#1a56db]"><?php echo esc_html($tag_2); ?></span>
               <span class="tag-dot bg-[#e02424] mx-2"></span>
-              <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-[#e02424]">Impact</span>
+              <?php $tag_3 = function_exists('get_field') && get_field('hero_tag_3', 'option') ? get_field('hero_tag_3', 'option') : 'Impact'; ?>
+              <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-[#e02424]"><?php echo esc_html($tag_3); ?></span>
             </div>
 
             <!-- H1 -->
             <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-gray-900 leading-tight mb-5">
-              Building The<br />
-              Future <span style="color:#1a56db;">Ecosystem</span>
+              <?php echo function_exists('get_field') && get_field('hero_title', 'option') ? get_field('hero_title', 'option') : 'Building The<br />
+              Future <span style="color:#1a56db;">Ecosystem</span>'; ?>
             </h1>
 
             <!-- Description -->
             <p id="hero-desc" class="text-sm text-gray-500 leading-relaxed max-w-md mb-8">
-              AUREUS GLOBAL kiến tạo và vận hành hệ sinh thái công nghệ
+              <?php echo function_exists('get_field') && get_field('hero_description', 'option') ? get_field('hero_description', 'option') : 'AUREUS GLOBAL kiến tạo và vận hành hệ sinh thái công nghệ
               toàn diện dựa trên trí tuệ nhân tạo, dữ liệu và đổi mới sáng tạo,
-              mang lại giá trị bền vững cho doanh nghiệp và xã hội.
+              mang lại giá trị bền vững cho doanh nghiệp và xã hội.'; ?>
             </p>
 
             <!-- CTA Buttons -->
@@ -284,9 +114,10 @@
               "></div>
 
               <!-- The AG logo -->
+              <?php $hero_img = function_exists('get_field') && get_field('hero_main_image', 'option') ? get_field('hero_main_image', 'option') : false; ?>
               <img
-                src="logo-aureus-global.png"
-                alt="Aureus Global – Building The Future Ecosystem"
+                src="<?php echo $hero_img ? esc_url($hero_img['url']) : esc_url( get_template_directory_uri() ) . '/assets/images/logo-aureus-global.png'; ?>"
+                alt="<?php echo $hero_img ? esc_attr($hero_img['alt']) : 'Aureus Global – Building The Future Ecosystem'; ?>"
                 class="logo-float logo-blend relative z-10"
                 style="width: 420px; max-width: 90vw; object-fit: contain;"
                 onerror="this.style.opacity='0.3'"
@@ -317,12 +148,12 @@
                 <path d="M8 5v14l11-7z"/>
               </svg>
             </div>
-            <span class="text-[11px] font-bold uppercase tracking-wider text-gray-900">Xem Intro</span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-gray-900"><?php echo function_exists('get_field') && get_field('intro_video_text', 'option') ? esc_html(get_field('intro_video_text', 'option')) : 'Xem Intro'; ?></span>
           </button>
 
           <div class="w-px h-4 bg-gray-200 mx-4"></div>
 
-          <span class="text-[11px] font-bold text-gray-900 tracking-wider">01:35</span>
+          <span class="text-[11px] font-bold text-gray-900 tracking-wider"><?php echo function_exists('get_field') && get_field('intro_video_duration', 'option') ? esc_html(get_field('intro_video_duration', 'option')) : '01:35'; ?></span>
           
         </div>
       </div>
@@ -338,14 +169,14 @@
           <div class="eco-left">
             <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1a56db] mb-4">Hệ Sinh Thái</p>
             <h2 class="text-3xl xl:text-4xl font-bold text-gray-900 leading-snug mb-5">
-              Một Tầm Nhìn.<br />Đa Sức Mạnh.
+              <?php echo function_exists('get_field') && get_field('eco_title', 'option') ? get_field('eco_title', 'option') : 'Một Tầm Nhìn.<br />Đa Sức Mạnh.'; ?>
             </h2>
             <p class="text-sm text-gray-500 leading-relaxed mb-8 max-w-xs">
-              Hệ sinh thái được vận hành như một cơ thể
+              <?php echo function_exists('get_field') && get_field('eco_description', 'option') ? get_field('eco_description', 'option') : 'Hệ sinh thái được vận hành như một cơ thể
               thống nhất, kết nối dữ liệu, công nghệ, con người
-              và vốn để tạo ra giá trị đột phá.
+              và vốn để tạo ra giá trị đột phá.'; ?>
             </p>
-            <a href="#" class="eco-discover inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#1a56db] hover:gap-3 transition-all duration-300">
+            <a href="#" aria-label="<?php esc_attr_e('Khám phá thêm về Hệ Sinh Thái Aureus Global', 'aureus'); ?>" class="eco-discover inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#1a56db] hover:gap-3 transition-all duration-300">
               Khám phá thêm
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
@@ -369,6 +200,28 @@
             <div class="dot" style="left:35%; top:60%;"></div>
             <div class="dot" style="left:65%; top:60%;"></div>
 
+            <?php if ( function_exists('have_rows') && have_rows('ecosystem_nodes', 'option') ) : ?>
+              <?php while ( have_rows('ecosystem_nodes', 'option') ) : the_row(); 
+                $is_center = get_sub_field('is_center_node');
+                $top = get_sub_field('position_top') ?: '50%';
+                $left = get_sub_field('position_left') ?: '50%';
+                $logo = get_sub_field('logo');
+                $classes = $is_center ? 'node node-center center-node' : 'node node-small logo-node';
+              ?>
+                <div
+                  class="<?php echo esc_attr($classes); ?>"
+                  style="left:<?php echo esc_attr($left); ?>; top:<?php echo esc_attr($top); ?>;"
+                  data-title="<?php echo esc_attr(get_sub_field('title')); ?>"
+                  data-desc="<?php echo esc_attr(get_sub_field('description')); ?>"
+                  data-tag="<?php echo esc_attr(get_sub_field('tag')); ?>"
+                >
+                  <?php if($logo): ?>
+                  <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" style="width:<?php echo $is_center ? '60%' : '65%'; ?>; max-width:<?php echo $is_center ? '100px' : '90px'; ?>; object-fit:contain; <?php if($is_center) echo 'mix-blend-mode:multiply;'; ?>" />
+                  <?php endif; ?>
+                </div>
+              <?php endwhile; ?>
+            <?php else : ?>
+
             <!-- CENTER: AG Logo -->
             <div
               class="node node-center center-node"
@@ -377,7 +230,7 @@
               data-desc="Trung tâm hệ sinh thái, kết nối các công ty thành viên trong chiến lược phát triển công nghệ, đầu tư và vận hành."
               data-tag="Global Ecosystem"
             >
-              <img src="logo-aureus-global-no-slogan.png" alt="Aureus Global" style="width:60%; max-width:100px; object-fit:contain; mix-blend-mode:multiply;" />
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-global-no-slogan.png" alt="Aureus Global" style="width:60%; max-width:100px; object-fit:contain; mix-blend-mode:multiply;" />
             </div>
 
             <!-- NODE: AUREUS HOLDING -->
@@ -388,7 +241,7 @@
               data-desc="Đơn vị định hướng chiến lược, quản trị đầu tư và phát triển hệ sinh thái doanh nghiệp."
               data-tag="Holding"
             >
-              <img src="logo-holding.png" alt="Aureus Holding" style="width:65%; max-width:90px; object-fit:contain;" />
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-holding.png" alt="Aureus Holding" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
 
             <!-- NODE: AUREUS LAB -->
@@ -399,7 +252,7 @@
               data-desc="Không gian nghiên cứu, thử nghiệm sản phẩm, công nghệ mới, AI, dữ liệu và giải pháp số."
               data-tag="Innovation Lab"
             >
-              <img src="logo-aureus-labs.png" alt="Aureus Lab" style="width:65%; max-width:90px; object-fit:contain;" />
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-labs.png" alt="Aureus Lab" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
 
             <!-- NODE: DIP TECH -->
@@ -410,7 +263,7 @@
               data-desc="Đơn vị công nghệ phụ trách nền tảng số, phần mềm, tích hợp hệ thống và chuyển đổi số."
               data-tag="Technology"
             >
-              <img src="dip-tech-3d-cam.png" alt="DIP Tech" style="width:65%; max-width:90px; object-fit:contain;" />
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/dip-tech-3d-cam.png" alt="DIP Tech" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
 
             <!-- NODE: AUREUS DIGITAL -->
@@ -421,7 +274,7 @@
               data-desc="Đơn vị triển khai truyền thông số, thương hiệu, marketing performance và trải nghiệm khách hàng."
               data-tag="Digital Growth"
             >
-              <img src="logo-aureus-digital.png" alt="Aureus Digital" style="width:65%; max-width:90px; object-fit:contain;" />
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-digital.png" alt="Aureus Digital" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
 
             <!-- NODE: AUREUS VENTURES -->
@@ -432,8 +285,10 @@
               data-desc="Mảng đầu tư, phát triển dự án, tìm kiếm cơ hội tăng trưởng và mở rộng hệ sinh thái."
               data-tag="Ventures"
             >
-              <img src="logo-aureus-ventures.png" alt="Aureus Ventures" style="width:65%; max-width:90px; object-fit:contain;" />
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-ventures.png" alt="Aureus Ventures" style="width:65%; max-width:90px; object-fit:contain;" />
             </div>
+            <?php endif; ?>
+
           </div><!-- /network -->
           
           <div id="tooltip" class="tooltip">
@@ -449,6 +304,26 @@
     <section id="stats" class="stats-ticker" aria-label="Key metrics">
       <div class="max-w-screen-2xl mx-auto">
         <div class="ticker-track" id="ticker-track">
+          <?php if ( function_exists('have_rows') && have_rows('stats_list', 'option') ) : ?>
+            <?php while ( have_rows('stats_list', 'option') ) : the_row(); ?>
+              <div class="ticker-item">
+                <div class="ticker-icon" <?php if(get_sub_field('is_highlighted')) echo 'style="color:#e02424;border-color:#fee2e2;background:#fff5f5;"'; ?> aria-hidden="true">
+                  <?php echo get_sub_field('icon_svg'); ?>
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-baseline gap-0.5">
+                    <span class="ticker-num" <?php if(get_sub_field('target_number')) echo 'data-target="'.esc_attr(get_sub_field('target_number')).'"'; ?> <?php if(get_sub_field('suffix')) echo 'data-suffix="'.esc_attr(get_sub_field('suffix')).'"'; ?> <?php if(get_sub_field('is_highlighted')) echo 'style="color:#e02424;"'; ?>><?php echo esc_html(get_sub_field('display_text') ?: '0'); ?></span>
+                    <?php if(get_sub_field('suffix')) : ?>
+                      <span style="font-size:1.1rem;font-weight:800;<?php echo get_sub_field('is_highlighted') ? 'color:#e02424;' : 'color:#111827;'; ?>"><?php echo esc_html(get_sub_field('suffix')); ?></span>
+                    <?php endif; ?>
+                  </div>
+                  <p class="ticker-cat"><?php echo esc_html(get_sub_field('title')); ?></p>
+                  <p class="ticker-sub"><?php echo esc_html(get_sub_field('subtitle')); ?></p>
+                </div>
+              </div>
+            <?php endwhile; ?>
+          <?php else : ?>
+
 
           <!-- 1: AI Projects -->
           <div class="ticker-item">
@@ -571,7 +446,9 @@
             </div>
           </div>
 
-        </div><!-- /ticker-track -->
+        
+          <?php endif; ?>
+</div><!-- /ticker-track -->
       </div>
     </section>
 
@@ -584,13 +461,13 @@
           <div class="co-left pt-2">
             <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-[#1a56db] mb-5">Our Companies</p>
             <h2 class="text-2xl xl:text-3xl font-bold text-gray-900 leading-snug mb-5 line-clamp-3">
-              Four Core Pillars. One Strong Ecosystem.
+              <?php echo function_exists('get_field') && get_field('companies_title', 'option') ? get_field('companies_title', 'option') : 'Four Core Pillars. One Strong Ecosystem.'; ?>
             </h2>
             <p class="text-[13px] text-gray-500 leading-relaxed mb-7">
-              Bốn công ty thành viên – bốn năng lực cốt lõi –
-              một hệ sinh thái hợp lực để dẫn dắt tương lai.
+              <?php echo function_exists('get_field') && get_field('companies_description', 'option') ? get_field('companies_description', 'option') : 'Bốn công ty thành viên – bốn năng lực cốt lõi –
+              một hệ sinh thái hợp lực để dẫn dắt tương lai.'; ?>
             </p>
-            <a href="#ecosystem" class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1a56db] hover:gap-4 transition-all duration-300">
+            <a href="#ecosystem" aria-label="<?php esc_attr_e('Xem tất cả các công ty thành viên', 'aureus'); ?>" class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1a56db] hover:gap-4 transition-all duration-300">
               View All Companies
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
@@ -598,24 +475,60 @@
 
           <!-- RIGHT: 4 Company Cards -->
           <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 lg:gap-4" id="co-cards">
+          <?php if ( function_exists('have_rows') && have_rows('companies_list', 'option') ) : ?>
+            <?php while ( have_rows('companies_list', 'option') ) : the_row(); 
+              $logo = get_sub_field('logo');
+              $image = get_sub_field('image');
+              $link = get_sub_field('link');
+            ?>
+            <div class="group bg-white border border-[#e5eaf4] rounded-[0.875rem] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_0.625rem_2.5rem_rgba(26,86,219,0.11)] hover:-translate-y-1">
+              <div class="pt-[0.875rem] px-4 pb-[0.625rem] flex items-center gap-[0.625rem] border-b border-[#eff6ff]">
+                <?php if($logo) : ?>
+                <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="w-9 h-9 object-contain mix-blend-multiply shrink-0" />
+                <?php endif; ?>
+                <div class="min-w-0">
+                  <h3 class="text-[0.6875rem] font-extrabold uppercase tracking-[0.08em] text-[#1e3a8a] whitespace-nowrap"><?php echo esc_html(get_sub_field('name')); ?></h3>
+                  <div class="inline-flex items-center gap-1 mt-[0.1875rem]">
+                    <span class="text-[0.5938rem] text-gray-500 font-medium whitespace-nowrap"><?php echo esc_html(get_sub_field('category')); ?></span>
+                  </div>
+                </div>
+              </div>
+              <div class="relative w-full aspect-video overflow-hidden">
+                <?php if($image) : ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                <?php endif; ?>
+              </div>
+              <div class="p-4 pb-[1.125rem] flex flex-col flex-1">
+                <p class="text-[0.7813rem] text-gray-500 leading-[1.65] flex-1 mb-[0.875rem]"><?php echo esc_html(get_sub_field('description')); ?></p>
+                <?php if($link) : ?>
+                <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target'] ? $link['target'] : '_self'); ?>" aria-label="<?php echo esc_attr($link['title'] ? $link['title'] : 'Tìm hiểu thêm về công ty này'); ?>" class="text-[0.6875rem] font-bold text-[#1a56db] inline-flex items-center gap-1 transition-all duration-300 hover:gap-2.5">
+                  <?php echo esc_html($link['title'] ? $link['title'] : 'Learn More'); ?>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php endwhile; ?>
+          <?php else : ?>
+
 
             <!-- Card 1: Aureus Lab -->
             <div class="group bg-white border border-[#e5eaf4] rounded-[0.875rem] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_0.625rem_2.5rem_rgba(26,86,219,0.11)] hover:-translate-y-1">
               <div class="pt-[0.875rem] px-4 pb-[0.625rem] flex items-center gap-[0.625rem] border-b border-[#eff6ff]">
-                <img src="logo-aureus-labs.png" alt="Aureus Lab" class="w-9 h-9 object-contain mix-blend-multiply shrink-0" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-labs.png" alt="Aureus Lab" class="w-9 h-9 object-contain mix-blend-multiply shrink-0" />
                 <div class="min-w-0">
-                  <p class="text-[0.6875rem] font-extrabold uppercase tracking-[0.08em] text-[#1e3a8a] whitespace-nowrap">Aureus Lab</p>
+                  <h3 class="text-[0.6875rem] font-extrabold uppercase tracking-[0.08em] text-[#1e3a8a] whitespace-nowrap">Aureus Lab</h3>
                   <div class="inline-flex items-center gap-1 mt-[0.1875rem]">
                     <span class="text-[0.5938rem] text-gray-500 font-medium whitespace-nowrap">R&amp;D – AI – Core Technology</span>
                   </div>
                 </div>
               </div>
               <div class="relative w-full aspect-video overflow-hidden">
-                <img src="aureus_lab.png" alt="AI research lab with team working on machine learning" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/aureus_lab.png" alt="AI research lab with team working on machine learning" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
               </div>
               <div class="p-4 pb-[1.125rem] flex flex-col flex-1">
                 <p class="text-[0.7813rem] text-gray-500 leading-[1.65] flex-1 mb-[0.875rem]">Nghiên cứu, phát triển AI, Machine Learning, Big Data và các công nghệ cốt lõi.</p>
-                <a href="#" class="text-[0.6875rem] font-bold text-[#1a56db] inline-flex items-center gap-1 transition-all duration-300 hover:gap-2.5">
+                <a href="#" aria-label="<?php esc_attr_e('Tìm hiểu thêm về công ty này', 'aureus'); ?>" class="text-[0.6875rem] font-bold text-[#1a56db] inline-flex items-center gap-1 transition-all duration-300 hover:gap-2.5">
                   Learn More
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
@@ -625,20 +538,20 @@
             <!-- Card 2: DIP Tech -->
             <div class="group bg-white border border-[#e5eaf4] rounded-[0.875rem] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_0.625rem_2.5rem_rgba(26,86,219,0.11)] hover:-translate-y-1">
               <div class="pt-[0.875rem] px-4 pb-[0.625rem] flex items-center gap-[0.625rem] border-b border-[#eff6ff]">
-                <img src="dip-tech-3d-cam.png" alt="DIP Tech" class="w-9 h-9 object-contain mix-blend-multiply shrink-0" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/dip-tech-3d-cam.png" alt="DIP Tech" class="w-9 h-9 object-contain mix-blend-multiply shrink-0" />
                 <div class="min-w-0">
-                  <p class="text-[0.6875rem] font-extrabold uppercase tracking-[0.08em] text-[#1e3a8a] whitespace-nowrap">DIP Tech</p>
+                  <h3 class="text-[0.6875rem] font-extrabold uppercase tracking-[0.08em] text-[#1e3a8a] whitespace-nowrap">DIP Tech</h3>
                   <div class="inline-flex items-center gap-1 mt-[0.1875rem]">
                     <span class="text-[0.5938rem] text-gray-500 font-medium whitespace-nowrap">Enterprise Solutions &amp; Operations</span>
                   </div>
                 </div>
               </div>
               <div class="relative w-full aspect-video overflow-hidden">
-                <img src="dip_tech.png" alt="Server room enterprise infrastructure" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/dip_tech.png" alt="Server room enterprise infrastructure" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
               </div>
               <div class="p-4 pb-[1.125rem] flex flex-col flex-1">
                 <p class="text-[0.7813rem] text-gray-500 leading-[1.65] flex-1 mb-[0.875rem]">Cung cấp giải pháp công nghệ và vận hành cho doanh nghiệp và tổ chức.</p>
-                <a href="#" class="text-[0.6875rem] font-bold text-[#1a56db] inline-flex items-center gap-1 transition-all duration-300 hover:gap-2.5">
+                <a href="#" aria-label="<?php esc_attr_e('Tìm hiểu thêm về công ty này', 'aureus'); ?>" class="text-[0.6875rem] font-bold text-[#1a56db] inline-flex items-center gap-1 transition-all duration-300 hover:gap-2.5">
                   Learn More
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
@@ -648,20 +561,20 @@
             <!-- Card 3: Aureus Digital -->
             <div class="group bg-white border border-[#e5eaf4] rounded-[0.875rem] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_0.625rem_2.5rem_rgba(26,86,219,0.11)] hover:-translate-y-1">
               <div class="pt-[0.875rem] px-4 pb-[0.625rem] flex items-center gap-[0.625rem] border-b border-[#eff6ff]">
-                <img src="logo-aureus-digital.png" alt="Aureus Digital" class="w-9 h-9 object-contain mix-blend-multiply shrink-0" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-digital.png" alt="Aureus Digital" class="w-9 h-9 object-contain mix-blend-multiply shrink-0" />
                 <div class="min-w-0">
-                  <p class="text-[0.6875rem] font-extrabold uppercase tracking-[0.08em] text-[#1e3a8a] whitespace-nowrap">Aureus Digital</p>
+                  <h3 class="text-[0.6875rem] font-extrabold uppercase tracking-[0.08em] text-[#1e3a8a] whitespace-nowrap">Aureus Digital</h3>
                   <div class="inline-flex items-center gap-1 mt-[0.1875rem]">
                     <span class="text-[0.5938rem] text-gray-500 font-medium whitespace-nowrap">Digital Growth &amp; Marketing</span>
                   </div>
                 </div>
               </div>
               <div class="relative w-full aspect-video overflow-hidden">
-                <img src="aureus_digital.png" alt="Digital marketing analytics dashboard" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/aureus_digital.png" alt="Digital marketing analytics dashboard" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
               </div>
               <div class="p-4 pb-[1.125rem] flex flex-col flex-1">
                 <p class="text-[0.7813rem] text-gray-500 leading-[1.65] flex-1 mb-[0.875rem]">Tăng trưởng thương hiệu và hiệu quả kinh doanh dựa trên dữ liệu và công nghệ.</p>
-                <a href="#" class="text-[0.6875rem] font-bold text-[#1a56db] inline-flex items-center gap-1 transition-all duration-300 hover:gap-2.5">
+                <a href="#" aria-label="<?php esc_attr_e('Tìm hiểu thêm về công ty này', 'aureus'); ?>" class="text-[0.6875rem] font-bold text-[#1a56db] inline-flex items-center gap-1 transition-all duration-300 hover:gap-2.5">
                   Learn More
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
@@ -671,27 +584,29 @@
             <!-- Card 4: Aureus Ventures -->
             <div class="group bg-white border border-[#e5eaf4] rounded-[0.875rem] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_0.625rem_2.5rem_rgba(26,86,219,0.11)] hover:-translate-y-1">
               <div class="pt-[0.875rem] px-4 pb-[0.625rem] flex items-center gap-[0.625rem] border-b border-[#eff6ff]">
-                <img src="logo-aureus-ventures.png" alt="Aureus Ventures" class="w-9 h-9 object-contain mix-blend-multiply shrink-0" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-ventures.png" alt="Aureus Ventures" class="w-9 h-9 object-contain mix-blend-multiply shrink-0" />
                 <div class="min-w-0">
-                  <p class="text-[0.6875rem] font-extrabold uppercase tracking-[0.08em] text-[#1e3a8a] whitespace-nowrap">Aureus Ventures</p>
+                  <h3 class="text-[0.6875rem] font-extrabold uppercase tracking-[0.08em] text-[#1e3a8a] whitespace-nowrap">Aureus Ventures</h3>
                   <div class="inline-flex items-center gap-1 mt-[0.1875rem]">
                     <span class="text-[0.5938rem] text-gray-500 font-medium whitespace-nowrap">Technology Investment</span>
                   </div>
                 </div>
               </div>
               <div class="relative w-full aspect-video overflow-hidden">
-                <img src="aureus_ventures.png" alt="Smart city skyline technology investment" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/aureus_ventures.png" alt="Smart city skyline technology investment" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
               </div>
               <div class="p-4 pb-[1.125rem] flex flex-col flex-1">
                 <p class="text-[0.7813rem] text-gray-500 leading-[1.65] flex-1 mb-[0.875rem]">Đầu tư vào các công ty công nghệ tiềm năng, tạo giá trị dài hạn.</p>
-                <a href="#" class="text-[0.6875rem] font-bold text-[#1a56db] inline-flex items-center gap-1 transition-all duration-300 hover:gap-2.5">
+                <a href="#" aria-label="<?php esc_attr_e('Tìm hiểu thêm về công ty này', 'aureus'); ?>" class="text-[0.6875rem] font-bold text-[#1a56db] inline-flex items-center gap-1 transition-all duration-300 hover:gap-2.5">
                   Learn More
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
               </div>
             </div>
 
-          </div><!-- /co-cards -->
+          
+          <?php endif; ?>
+</div><!-- /co-cards -->
         </div>
       </div>
     </section>
@@ -704,13 +619,13 @@
           <div class="ir-left py-4 lg:pr-4">
             <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-[#1a56db] mb-2">Quan hệ Cổ đông</p>
             <h2 class="text-xl xl:text-2xl font-bold text-gray-900 leading-snug mb-2 line-clamp-2">
-              Tầm nhìn Dài hạn. Tăng trưởng Bền vững.
+              <?php echo function_exists('get_field') && get_field('investor_title', 'option') ? get_field('investor_title', 'option') : 'Tầm nhìn Dài hạn. Tăng trưởng Bền vững.'; ?>
             </h2>
             <p class="text-[12.5px] text-gray-500 leading-relaxed mb-2 lg:mb-4 line-clamp-2">
-              Chiến lược dài hạn dựa trên quản trị minh bạch,
-              tài chính vững mạnh và đổi mới không ngừng.
+              <?php echo function_exists('get_field') && get_field('investor_description', 'option') ? get_field('investor_description', 'option') : 'Chiến lược dài hạn dựa trên quản trị minh bạch,
+              tài chính vững mạnh và đổi mới không ngừng.'; ?>
             </p>
-            <a href="#investment" class="btn-primary inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.14em] px-5 py-2.5 rounded">
+            <a href="#investment" aria-label="<?php esc_attr_e('Tìm hiểu thêm về Quan hệ Cổ đông', 'aureus'); ?>" class="btn-primary inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.14em] px-5 py-2.5 rounded">
               Tìm hiểu thêm
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
@@ -718,6 +633,18 @@
 
           <!-- CENTER: 4 Pillars -->
           <div class="ir-pillars py-8">
+          <?php if ( function_exists('have_rows') && have_rows('investor_pillars', 'option') ) : ?>
+            <?php while ( have_rows('investor_pillars', 'option') ) : the_row(); ?>
+            <div class="pillar-item">
+              <div class="pillar-icon" aria-hidden="true">
+                <?php echo get_sub_field('icon_svg'); ?>
+              </div>
+              <p class="pillar-label"><?php echo esc_html(get_sub_field('title')); ?></p>
+              <p class="pillar-sub"><?php echo esc_html(get_sub_field('subtitle')); ?></p>
+            </div>
+            <?php endwhile; ?>
+          <?php else : ?>
+
 
             <!-- GOVERNANCE -->
             <div class="pillar-item">
@@ -769,13 +696,15 @@
               <p class="pillar-sub">Phát triển bền vững</p>
             </div>
 
-          </div><!-- /ir-pillars -->
+          
+          <?php endif; ?>
+</div><!-- /ir-pillars -->
 
           <!-- RIGHT: News & Insights -->
           <div class="ir-news py-4 lg:pl-8" id="ir-news-panel">            <!-- News items data (JS will swap) -->
             <div id="news-display">
               <div class="relative">
-<img src="aureus_news.png" alt="Aureus Global 2030 strategic conference event" class="news-card-img" id="news-img" />
+<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/aureus_news.png" alt="Aureus Global 2030 strategic conference event" class="news-card-img" id="news-img" />
              <div class="absolute bottom-2 left-2 rounded-lg px-2 py-1 border border-gray-500/50 hover:border-white">
  <a href="#" class="news-read-more" id="news-link">
                 Đọc thêm
@@ -812,8 +741,8 @@
         <!-- Section header -->
         <div class="news-section-header">
           <div>
-            <p class="news-eyebrow">Tin tức &amp; Sự kiện</p>
-            <h2 class="news-section-title">Cập nhật mới nhất</h2>
+            <p class="news-eyebrow"><?php echo function_exists("get_field") && get_field('news_section_eyebrow', 'option') ? esc_html(get_field('news_section_eyebrow', 'option')) : "Tin tức &amp; Sự kiện"; ?></p>
+            <h2 class="news-section-title"><?php echo function_exists("get_field") && get_field('news_section_title', 'option') ? esc_html(get_field('news_section_title', 'option')) : "Cập nhật mới nhất"; ?></h2>
           </div>
           <a href="#" class="news-view-all">
             Xem tất cả
@@ -824,72 +753,75 @@
         <div class="news-layout">
 
           <!-- LEFT: Featured article (big) -->
+          <!-- LEFT: Featured article (big) -->
+          <?php
+          $featured_news = new WP_Query( array(
+              'post_type'           => 'post',
+              'posts_per_page'      => 1,
+              'ignore_sticky_posts' => 1,
+          ) );
+          if ( $featured_news->have_posts() ) :
+              while ( $featured_news->have_posts() ) : $featured_news->the_post();
+          ?>
           <article class="news-featured">
             <div class="news-featured-img-wrap">
-              <img src="aureus_news.png" alt="Aureus Global công bố tầm nhìn chiến lược 2030" class="news-featured-img" loading="lazy" />
-              <span class="news-badge">Chiến lược</span>
+              <?php if ( has_post_thumbnail() ) : ?>
+                  <?php the_post_thumbnail('large', array('class' => 'news-featured-img', 'loading' => 'lazy')); ?>
+              <?php else : ?>
+                  <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/aureus_news.png" alt="<?php the_title_attribute(); ?>" class="news-featured-img" loading="lazy" />
+              <?php endif; ?>
+              <span class="news-badge"><?php $categories = get_the_category(); if ( ! empty( $categories ) ) { echo esc_html( $categories[0]->name ); } ?></span>
             </div>
             <div class="news-featured-body">
               <p class="news-date">
                 <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-                28 Tháng 5, 2025
+                <?php echo get_the_date(); ?>
               </p>
-              <h3 class="news-featured-title line-clamp-3">AUREUS GLOBAL công bố tầm nhìn chiến lược 2030 — Xây dựng hệ sinh thái công nghệ toàn cầu</h3>
-              <p class="news-featured-excerpt line-clamp-3">Aureus Global chính thức ra mắt lộ trình phát triển đến năm 2030, tập trung vào việc mở rộng hệ sinh thái công nghệ ra thị trường Đông Nam Á và quốc tế, với tổng đầu tư dự kiến vượt 100 triệu USD.</p>
-              <a href="#" class="news-featured-cta">
+              <h3 class="news-featured-title line-clamp-3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+              <p class="news-featured-excerpt line-clamp-3"><?php echo wp_trim_words( get_the_excerpt(), 25 ); ?></p>
+              <a href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Đọc bài viết: %s', 'aureus' ), get_the_title() ) ); ?>" class="news-featured-cta">
                 Đọc bài viết
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
           </article>
+          <?php
+              endwhile;
+              wp_reset_postdata();
+          endif;
+          ?>
 
           <!-- RIGHT: News list (horizontal cards) -->
           <div class="news-list">
-
+          <?php
+          $list_news = new WP_Query( array(
+              'post_type'           => 'post',
+              'posts_per_page'      => 4,
+              'offset'              => 1, // Skip the first one which is featured
+              'ignore_sticky_posts' => 1,
+          ) );
+          if ( $list_news->have_posts() ) :
+              while ( $list_news->have_posts() ) : $list_news->the_post();
+          ?>
             <article class="news-list-item">
               <div class="news-list-thumb">
-                <img src="aureus_news.png" alt="Aureus Lab ra mắt nền tảng AI" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+              <?php if ( has_post_thumbnail() ) : ?>
+                  <?php the_post_thumbnail('medium', array('class' => 'w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105', 'loading' => 'lazy')); ?>
+              <?php else : ?>
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/aureus_news.png" alt="<?php the_title_attribute(); ?>" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+              <?php endif; ?>
               </div>
               <div class="news-list-body">
-                <span class="news-badge news-badge--sm">Công nghệ</span>
-                <h4 class="news-list-title">Aureus Lab ra mắt nền tảng AI phân tích dữ liệu doanh nghiệp thế hệ mới</h4>
-                <p class="news-list-date">15 Tháng 5, 2025</p>
+                <span class="news-badge news-badge--sm"><?php $categories = get_the_category(); if ( ! empty( $categories ) ) { echo esc_html( $categories[0]->name ); } ?></span>
+                <h3 class="news-list-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <p class="news-list-date"><?php echo get_the_date(); ?></p>
               </div>
             </article>
-
-            <article class="news-list-item">
-              <div class="news-list-thumb">
-                <img src="aureus_news.png" alt="DIP Tech hợp tác Samsung SDS" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
-              </div>
-              <div class="news-list-body">
-                <span class="news-badge news-badge--sm">Hợp tác</span>
-                <h4 class="news-list-title">DIP Tech ký kết hợp tác chiến lược với Samsung SDS triển khai giải pháp ERP</h4>
-                <p class="news-list-date">8 Tháng 5, 2025</p>
-              </div>
-            </article>
-
-            <article class="news-list-item">
-              <div class="news-list-thumb">
-                <img src="aureus_news.png" alt="Aureus Ventures đầu tư Fintech" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
-              </div>
-              <div class="news-list-body">
-                <span class="news-badge news-badge--sm">Đầu tư</span>
-                <h4 class="news-list-title">Aureus Ventures dẫn đầu vòng Series A 5 triệu USD vào startup Fintech Việt Nam</h4>
-                <p class="news-list-date">2 Tháng 5, 2025</p>
-              </div>
-            </article>
-
-            <article class="news-list-item">
-              <div class="news-list-thumb">
-                <img src="aureus_news.png" alt="Aureus Digital đạt Top 10" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
-              </div>
-              <div class="news-list-body">
-                <span class="news-badge news-badge--sm">Giải thưởng</span>
-                <h4 class="news-list-title">Aureus Digital được vinh danh Top 10 Agency Digital Marketing xuất sắc 2025</h4>
-                <p class="news-list-date">20 Tháng 4, 2025</p>
-              </div>
-            </article>
-
+          <?php
+              endwhile;
+              wp_reset_postdata();
+          endif;
+          ?>
           </div><!-- /news-list -->
 
         </div><!-- /news-layout -->
@@ -899,215 +831,136 @@
     <!-- ═══════════════════ PARTNERS SECTION ═══════════════════ -->
     <section id="partners" class="partners-section" aria-label="Đối tác chiến lược">
       <div class="partners-header">
-        <p class="partners-eyebrow">Đối tác Chiến lược</p>
-        <h2 class="partners-title">Cùng Kiến tạo Tương lai</h2>
-        <p class="partners-sub">Hợp tác với các doanh nghiệp, tổ chức hàng đầu trong và ngoài nước để xây dựng hệ sinh thái công nghệ bền vững.</p>
+        <p class="partners-eyebrow"><?php echo function_exists("get_field") && get_field('partners_eyebrow', 'option') ? esc_html(get_field('partners_eyebrow', 'option')) : "Đối tác Chiến lược"; ?></p>
+        <h2 class="partners-title"><?php echo function_exists("get_field") && get_field('partners_title', 'option') ? esc_html(get_field('partners_title', 'option')) : "Cùng Kiến tạo Tương lai"; ?></h2>
+        <p class="partners-sub"><?php echo function_exists("get_field") && get_field('partners_description', 'option') ? esc_html(get_field('partners_description', 'option')) : "Hợp tác với các doanh nghiệp, tổ chức hàng đầu trong và ngoài nước để xây dựng hệ sinh thái công nghệ bền vững."; ?></p>
       </div>
 
       <!-- ROW 1: scroll left -->
       <div class="partners-track-wrap" aria-hidden="true">
         <div class="partners-track partners-track--left">
+          <?php if ( function_exists('have_rows') && have_rows('partners_track_1', 'option') ) : ?>
+            <!-- Set A -->
+            <?php while ( have_rows('partners_track_1', 'option') ) : the_row(); 
+              $is_text = get_sub_field('is_text_only');
+            ?>
+              <?php if($is_text) : ?>
+                <div class="partner-logo-item partner-text-item"><span><?php echo esc_html(get_sub_field('text')); ?></span></div>
+              <?php else : 
+                $logo = get_sub_field('logo');
+                if($logo) :
+              ?>
+                <div class="partner-logo-item"><img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" /></div>
+              <?php endif; endif; ?>
+            <?php endwhile; ?>
+            <!-- Set B (duplicate for seamless loop) -->
+            <?php while ( have_rows('partners_track_1', 'option') ) : the_row(); 
+              $is_text = get_sub_field('is_text_only');
+            ?>
+              <?php if($is_text) : ?>
+                <div class="partner-logo-item partner-text-item"><span><?php echo esc_html(get_sub_field('text')); ?></span></div>
+              <?php else : 
+                $logo = get_sub_field('logo');
+                if($logo) :
+              ?>
+                <div class="partner-logo-item"><img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" /></div>
+              <?php endif; endif; ?>
+            <?php endwhile; ?>
+          <?php else : ?>
+
           <!-- Set A -->
-          <div class="partner-logo-item"><img src="logo-aureus-labs.png"     alt="Aureus Lab" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-labs.png"     alt="Aureus Lab" /></div>
           <div class="partner-logo-item partner-text-item"><span>Google Cloud</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-digital.png"  alt="Aureus Digital" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-digital.png"  alt="Aureus Digital" /></div>
           <div class="partner-logo-item partner-text-item"><span>Microsoft Azure</span></div>
-          <div class="partner-logo-item"><img src="dip-tech-3d-cam.png"       alt="DIP Tech" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/dip-tech-3d-cam.png"       alt="DIP Tech" /></div>
           <div class="partner-logo-item partner-text-item"><span>AWS</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-ventures.png" alt="Aureus Ventures" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-ventures.png" alt="Aureus Ventures" /></div>
           <div class="partner-logo-item partner-text-item"><span>Nvidia</span></div>
-          <div class="partner-logo-item"><img src="logo-holding.png"         alt="Aureus Holding" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-holding.png"         alt="Aureus Holding" /></div>
           <div class="partner-logo-item partner-text-item"><span>Meta AI</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-global.png"   alt="Aureus Global" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-global.png"   alt="Aureus Global" /></div>
           <div class="partner-logo-item partner-text-item"><span>OpenAI</span></div>
           <!-- Set B (duplicate for seamless loop) -->
-          <div class="partner-logo-item"><img src="logo-aureus-labs.png"     alt="Aureus Lab" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-labs.png"     alt="Aureus Lab" /></div>
           <div class="partner-logo-item partner-text-item"><span>Google Cloud</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-digital.png"  alt="Aureus Digital" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-digital.png"  alt="Aureus Digital" /></div>
           <div class="partner-logo-item partner-text-item"><span>Microsoft Azure</span></div>
-          <div class="partner-logo-item"><img src="dip-tech-3d-cam.png"       alt="DIP Tech" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/dip-tech-3d-cam.png"       alt="DIP Tech" /></div>
           <div class="partner-logo-item partner-text-item"><span>AWS</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-ventures.png" alt="Aureus Ventures" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-ventures.png" alt="Aureus Ventures" /></div>
           <div class="partner-logo-item partner-text-item"><span>Nvidia</span></div>
-          <div class="partner-logo-item"><img src="logo-holding.png"         alt="Aureus Holding" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-holding.png"         alt="Aureus Holding" /></div>
           <div class="partner-logo-item partner-text-item"><span>Meta AI</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-global.png"   alt="Aureus Global" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-global.png"   alt="Aureus Global" /></div>
           <div class="partner-logo-item partner-text-item"><span>OpenAI</span></div>
+        
+          <?php endif; ?>
         </div>
       </div>
 
       <!-- ROW 2: scroll right -->
       <div class="partners-track-wrap" aria-hidden="true">
         <div class="partners-track partners-track--right">
+          <?php if ( function_exists('have_rows') && have_rows('partners_track_2', 'option') ) : ?>
+            <!-- Set A -->
+            <?php while ( have_rows('partners_track_2', 'option') ) : the_row(); 
+              $is_text = get_sub_field('is_text_only');
+            ?>
+              <?php if($is_text) : ?>
+                <div class="partner-logo-item partner-text-item"><span><?php echo esc_html(get_sub_field('text')); ?></span></div>
+              <?php else : 
+                $logo = get_sub_field('logo');
+                if($logo) :
+              ?>
+                <div class="partner-logo-item"><img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" /></div>
+              <?php endif; endif; ?>
+            <?php endwhile; ?>
+            <!-- Set B (duplicate) -->
+            <?php while ( have_rows('partners_track_2', 'option') ) : the_row(); 
+              $is_text = get_sub_field('is_text_only');
+            ?>
+              <?php if($is_text) : ?>
+                <div class="partner-logo-item partner-text-item"><span><?php echo esc_html(get_sub_field('text')); ?></span></div>
+              <?php else : 
+                $logo = get_sub_field('logo');
+                if($logo) :
+              ?>
+                <div class="partner-logo-item"><img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" /></div>
+              <?php endif; endif; ?>
+            <?php endwhile; ?>
+          <?php else : ?>
+
           <!-- Set A -->
           <div class="partner-logo-item partner-text-item"><span>Samsung SDS</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-global.png"   alt="Aureus Global" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-global.png"   alt="Aureus Global" /></div>
           <div class="partner-logo-item partner-text-item"><span>FPT Software</span></div>
-          <div class="partner-logo-item"><img src="logo-holding.png"         alt="Aureus Holding" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-holding.png"         alt="Aureus Holding" /></div>
           <div class="partner-logo-item partner-text-item"><span>Viettel Group</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-ventures.png" alt="Aureus Ventures" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-ventures.png" alt="Aureus Ventures" /></div>
           <div class="partner-logo-item partner-text-item"><span>VinAI</span></div>
-          <div class="partner-logo-item"><img src="dip-tech-3d-cam.png"       alt="DIP Tech" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/dip-tech-3d-cam.png"       alt="DIP Tech" /></div>
           <div class="partner-logo-item partner-text-item"><span>Momo</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-digital.png"  alt="Aureus Digital" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-digital.png"  alt="Aureus Digital" /></div>
           <div class="partner-logo-item partner-text-item"><span>Zalo</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-labs.png"     alt="Aureus Lab" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-labs.png"     alt="Aureus Lab" /></div>
           <!-- Set B (duplicate) -->
           <div class="partner-logo-item partner-text-item"><span>Samsung SDS</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-global.png"   alt="Aureus Global" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-global.png"   alt="Aureus Global" /></div>
           <div class="partner-logo-item partner-text-item"><span>FPT Software</span></div>
-          <div class="partner-logo-item"><img src="logo-holding.png"         alt="Aureus Holding" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-holding.png"         alt="Aureus Holding" /></div>
           <div class="partner-logo-item partner-text-item"><span>Viettel Group</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-ventures.png" alt="Aureus Ventures" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-ventures.png" alt="Aureus Ventures" /></div>
           <div class="partner-logo-item partner-text-item"><span>VinAI</span></div>
-          <div class="partner-logo-item"><img src="dip-tech-3d-cam.png"       alt="DIP Tech" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/dip-tech-3d-cam.png"       alt="DIP Tech" /></div>
           <div class="partner-logo-item partner-text-item"><span>Momo</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-digital.png"  alt="Aureus Digital" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-digital.png"  alt="Aureus Digital" /></div>
           <div class="partner-logo-item partner-text-item"><span>Zalo</span></div>
-          <div class="partner-logo-item"><img src="logo-aureus-labs.png"     alt="Aureus Lab" /></div>
+          <div class="partner-logo-item"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-aureus-labs.png"     alt="Aureus Lab" /></div>
+        
+          <?php endif; ?>
         </div>
       </div>
 
     </section>
-    <!-- ═══════════════════ FOOTER ═══════════════════ -->
-    <footer class="footer-section pt-14 pb-0" id="footer" aria-label="Site footer">
-      <div class="max-w-screen-xl mx-auto px-6 xl:px-10">
-
-        <!-- Main grid: brand + 6 columns -->
-        <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-[220px_1fr_1fr_1fr_1fr_1fr_1fr] gap-x-6 gap-y-10 pb-12">
-
-          <!-- Brand Column -->
-          <div class="col-span-2 md:col-span-4 xl:col-span-1">
-            <img src="logo-aureus-global.png" alt="Aureus Global" style="height:52px; mix-blend-mode:multiply; margin-bottom:14px;" />
-            <p class="text-[12px] text-gray-500 leading-relaxed mb-6 max-w-[190px]">
-              Building the future ecosystem through technology, data and sustainable investments.
-            </p>
-            <!-- Social icons -->
-            <div class="flex gap-2.5" aria-label="Social media links">
-              <a href="#" class="footer-social" aria-label="LinkedIn">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="#" class="footer-social" aria-label="Twitter/X">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-              <a href="#" class="footer-social" aria-label="Facebook">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Col 1: ECOSYSTEM -->
-          <div>
-            <p class="footer-col-head">Hệ Sinh Thái</p>
-            <ul class="space-y-2.5">
-              <li><a href="#companies" class="footer-link">Aureus Lab</a></li>
-              <li><a href="#companies" class="footer-link">DIP Tech</a></li>
-              <li><a href="#companies" class="footer-link">Aureus Digital</a></li>
-              <li><a href="#companies" class="footer-link">Aureus Ventures</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 2: TECHNOLOGY -->
-          <div>
-            <p class="footer-col-head">Công nghệ</p>
-            <ul class="space-y-2.5">
-              <li><a href="#technology" class="footer-link">AI &amp; Dữ liệu</a></li>
-              <li><a href="#technology" class="footer-link">Nghiên cứu &amp; Đổi mới</a></li>
-              <li><a href="#technology" class="footer-link">Giải pháp</a></li>
-              <li><a href="#technology" class="footer-link">Nền tảng</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 3: INVESTMENT -->
-          <div>
-            <p class="footer-col-head">Đầu tư</p>
-            <ul class="space-y-2.5">
-              <li><a href="#investment" class="footer-link">Vốn Đầu tư Mạo hiểm</a></li>
-              <li><a href="#investment" class="footer-link">Danh mục Đầu tư</a></li>
-              <li><a href="#investment" class="footer-link">Tiêu chí Đầu tư</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 4: INVESTOR RELATIONS -->
-          <div>
-            <p class="footer-col-head">Quan hệ Cổ đông</p>
-            <ul class="space-y-2.5">
-              <li><a href="#investor" class="footer-link">Tổng quan</a></li>
-              <li><a href="#investor" class="footer-link">Báo cáo Tài chính</a></li>
-              <li><a href="#investor" class="footer-link">Thuyết trình</a></li>
-              <li><a href="#investor" class="footer-link">ESG &amp; Phát triển Bền vững</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 5: ABOUT US -->
-          <div>
-            <p class="footer-col-head">Về Chúng Tôi</p>
-            <ul class="space-y-2.5">
-              <li><a href="#" class="footer-link">Về chúng tôi</a></li>
-              <li><a href="#" class="footer-link">Tầm nhìn &amp; Sứ mệnh</a></li>
-              <li><a href="#" class="footer-link">Giá trị cốt lõi</a></li>
-              <li><a href="#" class="footer-link">Ban lãnh đạo</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 6: CAREERS -->
-          <div>
-            <p class="footer-col-head">Tuyển dụng</p>
-            <ul class="space-y-2.5">
-              <li><a href="#" class="footer-link">Văn hóa</a></li>
-              <li><a href="#" class="footer-link">Cơ hội nghề nghiệp</a></li>
-              <li><a href="#" class="footer-link">Phát triển sự nghiệp</a></li>
-            </ul>
-          </div>
-
-        </div><!-- /main grid -->
-
-        <!-- Bottom bar -->
-        <div class="border-t border-gray-200 py-5 flex flex-col lg:flex-row items-center justify-between gap-3">
-          <!-- Left: copyright -->
-          <p class="text-[11px] text-gray-400 order-2 lg:order-1">
-            © 2025 AUREUS GLOBAL. All rights reserved.
-          </p>
-          <!-- Center: legal links -->
-          <div class="flex items-center gap-4 order-1 lg:order-2">
-            <a href="#" class="text-[11px] text-gray-400 hover:text-[#1a56db] transition-colors">Chính sách Bảo mật</a>
-            <span class="text-gray-300 text-xs">|</span>
-            <a href="#" class="text-[11px] text-gray-400 hover:text-[#1a56db] transition-colors">Điều khoản Sử dụng</a>
-            <span class="text-gray-300 text-xs">|</span>
-            <a href="#" class="text-[11px] text-gray-400 hover:text-[#1a56db] transition-colors">Chính sách Cookie</a>
-          </div>
-          <!-- Right: contact info -->
-          <div class="flex items-center gap-4 order-3">
-            <a href="mailto:contact@aureus.global" class="text-[11px] text-gray-500 hover:text-[#1a56db] transition-colors flex items-center gap-1.5">
-              <svg class="w-3 h-3 text-[#1a56db]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              contact@aureus.global
-            </a>
-            <a href="tel:+842873108888" class="text-[11px] text-gray-500 hover:text-[#1a56db] transition-colors flex items-center gap-1.5">
-              <svg class="w-3 h-3 text-[#1a56db]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +84 28 7310 8888
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </footer>
-
-  </main>
-
-  <!-- External JS (deferred — runs after DOM ready) -->
-  <script src="main.js" defer></script>
-
-  <!-- Google Translate -->
-  <div id="google_translate_element" style="display: none;"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'auto',
-        includedLanguages: 'en,vi',
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
-</body>
-</html>
+<?php get_footer(); ?>

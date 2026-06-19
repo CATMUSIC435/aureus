@@ -1,0 +1,985 @@
+[
+    {
+        "key": "group_aureus_frontpage",
+        "title": "Cấu hình Trang Chủ (Aureus Global)",
+        "fields": [
+            {
+                "key": "field_r47q7lcsy",
+                "label": "Tab Hero",
+                "name": "tab_hero",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_x8spd6o3e",
+                "label": "Từ khóa 1",
+                "name": "hero_tag_1",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Intelligence"
+            },
+            {
+                "key": "field_0994ymst8",
+                "label": "Từ khóa 2",
+                "name": "hero_tag_2",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Innovation"
+            },
+            {
+                "key": "field_clvxllyq3",
+                "label": "Từ khóa 3",
+                "name": "hero_tag_3",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Impact"
+            },
+            {
+                "key": "field_il1qc703s",
+                "label": "Tiêu đề chính",
+                "name": "hero_title",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 3
+            },
+            {
+                "key": "field_7dlh7nwxg",
+                "label": "Mô tả chính",
+                "name": "hero_description",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 3
+            },
+            {
+                "key": "field_j6mocv03g",
+                "label": "Hình ảnh 3D nổi",
+                "name": "hero_main_image",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_7o07jxrol",
+                "label": "Chữ nút Video",
+                "name": "intro_video_text",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Xem Intro"
+            },
+            {
+                "key": "field_i2ytzin2z",
+                "label": "Thời lượng Video",
+                "name": "intro_video_duration",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "01:35"
+            },
+            {
+                "key": "field_wcdfnv5ny",
+                "label": "Tab Hệ sinh thái",
+                "name": "tab_ecosystem",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_bb9ocvrx5",
+                "label": "Tiêu đề Hệ sinh thái",
+                "name": "eco_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_mhwmhuzje",
+                "label": "Mô tả Hệ sinh thái",
+                "name": "eco_description",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 3
+            },
+            {
+                "key": "field_aydqnxhrc",
+                "label": "Danh sách Mạng lưới (Nodes)",
+                "name": "ecosystem_nodes",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Thêm dòng mới",
+                "sub_fields": [
+                    {
+                        "key": "field_iebl70yir",
+                        "label": "Là Node Trung Tâm?",
+                        "name": "is_center_node",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "Chọn nếu đây là logo nằm giữa"
+                    },
+                    {
+                        "key": "field_59j5vzwn0",
+                        "label": "Vị trí Top (%)",
+                        "name": "position_top",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "50%"
+                    },
+                    {
+                        "key": "field_ppy4hx7hl",
+                        "label": "Vị trí Left (%)",
+                        "name": "position_left",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "50%"
+                    },
+                    {
+                        "key": "field_nc14c8iss",
+                        "label": "Logo",
+                        "name": "logo",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "thumbnail"
+                    },
+                    {
+                        "key": "field_8a1s3lnmb",
+                        "label": "Tên Công ty",
+                        "name": "title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_ke4lpfshl",
+                        "label": "Mô tả ngắn",
+                        "name": "description",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "rows": 2
+                    },
+                    {
+                        "key": "field_6xazqk2y3",
+                        "label": "Thẻ tag (VD: Holding)",
+                        "name": "tag",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    }
+                ]
+            },
+            {
+                "key": "field_zs5mfpt2e",
+                "label": "Tab Các chỉ số",
+                "name": "tab_stats",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_xhol9t2p4",
+                "label": "Danh sách Chỉ số (Stats)",
+                "name": "stats_list",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Thêm dòng mới",
+                "sub_fields": [
+                    {
+                        "key": "field_9f8ro47xj",
+                        "label": "Nổi bật (Màu đỏ)?",
+                        "name": "is_highlighted",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "Tick để hiện màu đỏ"
+                    },
+                    {
+                        "key": "field_vj7e18xro",
+                        "label": "Icon (Mã SVG)",
+                        "name": "icon_svg",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "rows": 3
+                    },
+                    {
+                        "key": "field_h07qv3s83",
+                        "label": "Số liệu (Dành cho hiệu ứng nhảy số)",
+                        "name": "target_number",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_av4r3fxfy",
+                        "label": "Ký tự hậu tố (+, PB...)",
+                        "name": "suffix",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_7wjmql821",
+                        "label": "Văn bản hiển thị mặc định",
+                        "name": "display_text",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_lndf0kprl",
+                        "label": "Tiêu đề",
+                        "name": "title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_0fjo1v1rk",
+                        "label": "Phụ đề",
+                        "name": "subtitle",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    }
+                ]
+            },
+            {
+                "key": "field_cx1xq3wkz",
+                "label": "Tab Công ty thành viên",
+                "name": "tab_companies",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_3bkrwzaoh",
+                "label": "Tiêu đề Công ty",
+                "name": "companies_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_wekcc16at",
+                "label": "Mô tả Công ty",
+                "name": "companies_description",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 3
+            },
+            {
+                "key": "field_a7yetivz7",
+                "label": "Danh sách Công ty",
+                "name": "companies_list",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Thêm dòng mới",
+                "sub_fields": [
+                    {
+                        "key": "field_ydkzex03x",
+                        "label": "Logo",
+                        "name": "logo",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "thumbnail"
+                    },
+                    {
+                        "key": "field_llmfs6t4r",
+                        "label": "Tên Công ty",
+                        "name": "name",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_l4s41uy3e",
+                        "label": "Lĩnh vực",
+                        "name": "category",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_4o8d5a2zw",
+                        "label": "Hình ảnh Cover",
+                        "name": "image",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "medium"
+                    },
+                    {
+                        "key": "field_0yswesno4",
+                        "label": "Mô tả",
+                        "name": "description",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "rows": 4
+                    },
+                    {
+                        "key": "field_lm4vrs0uj",
+                        "label": "Link (Tìm hiểu thêm)",
+                        "name": "link",
+                        "type": "link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array"
+                    }
+                ]
+            },
+            {
+                "key": "field_n5i38v5sr",
+                "label": "Tab Cổ đông",
+                "name": "tab_investor",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_iifs1elhx",
+                "label": "Tiêu đề Cổ đông",
+                "name": "investor_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_tfnpbpiv5",
+                "label": "Mô tả Cổ đông",
+                "name": "investor_description",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 3
+            },
+            {
+                "key": "field_ezib2bmm4",
+                "label": "Danh sách Trụ cột (Pillars)",
+                "name": "investor_pillars",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Thêm dòng mới",
+                "sub_fields": [
+                    {
+                        "key": "field_26xpnmzpg",
+                        "label": "Icon (Mã SVG)",
+                        "name": "icon_svg",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "rows": 3
+                    },
+                    {
+                        "key": "field_7m8xnp7hl",
+                        "label": "Tiêu đề",
+                        "name": "title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_e17y5zgt5",
+                        "label": "Phụ đề",
+                        "name": "subtitle",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    }
+                ]
+            },
+            {
+                "key": "field_yzbldipsz",
+                "label": "Tab Tin tức",
+                "name": "tab_news",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_szgebjjmd",
+                "label": "Tiêu đề nhỏ (Eyebrow)",
+                "name": "news_section_eyebrow",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Tin tức & Sự kiện"
+            },
+            {
+                "key": "field_jwvt8h8qk",
+                "label": "Tiêu đề chính",
+                "name": "news_section_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Cập nhật mới nhất"
+            },
+            {
+                "key": "field_xm79bjvqk",
+                "label": "Chọn bài viết hiển thị",
+                "name": "homepage_selected_news",
+                "type": "relationship",
+                "instructions": "Chọn tối đa 5 bài viết. Bài viết đầu tiên sẽ là bài nổi bật to nhất. Nếu bỏ trống, trang sẽ tự động lấy các bài viết mới nhất.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search",
+                    "taxonomy"
+                ],
+                "return_format": "id",
+                "min": 0,
+                "max": 5,
+                "elements": [
+                    "featured_image"
+                ]
+            },
+            {
+                "key": "field_kkw7rwp2l",
+                "label": "Tab Đối tác",
+                "name": "tab_partners",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "key": "field_quqhnov78",
+                "label": "Tiêu đề nhỏ (Eyebrow)",
+                "name": "partners_eyebrow",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Đối tác Chiến lược"
+            },
+            {
+                "key": "field_lrpkii7di",
+                "label": "Tiêu đề chính",
+                "name": "partners_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Cùng Kiến tạo Tương lai"
+            },
+            {
+                "key": "field_evm1kwjgu",
+                "label": "Mô tả Đối tác",
+                "name": "partners_description",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 3
+            },
+            {
+                "key": "field_63iek0rfe",
+                "label": "Hàng Đối tác 1",
+                "name": "partners_track_1",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Thêm dòng mới",
+                "sub_fields": [
+                    {
+                        "key": "field_h42o8p44s",
+                        "label": "Chỉ hiển thị chữ?",
+                        "name": "is_text_only",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_rysltt1mi",
+                        "label": "Văn bản (Nếu chỉ hiện chữ)",
+                        "name": "text",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_m8iurvi8h",
+                        "label": "Logo (Nếu hiển thị ảnh)",
+                        "name": "logo",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "thumbnail"
+                    }
+                ]
+            },
+            {
+                "key": "field_k0wdapygp",
+                "label": "Hàng Đối tác 2",
+                "name": "partners_track_2",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Thêm dòng mới",
+                "sub_fields": [
+                    {
+                        "key": "field_22hx1imai",
+                        "label": "Chỉ hiển thị chữ?",
+                        "name": "is_text_only",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_9opssz45r",
+                        "label": "Văn bản (Nếu chỉ hiện chữ)",
+                        "name": "text",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "key": "field_hd58fitda",
+                        "label": "Logo (Nếu hiển thị ảnh)",
+                        "name": "logo",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "thumbnail"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "theme-general-settings"
+                }
+            ]
+        ],
+        "menu_order": 1,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Cấu hình nội dung cho trang chủ (Chuyển sang Options)"
+    }
+]
