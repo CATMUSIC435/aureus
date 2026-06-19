@@ -348,17 +348,8 @@ $(function () {
 
   $navLinks.on('click', function (e) {
     const href = $(this).attr('href');
-    if (href && href !== '#' && !href.startsWith('#')) {
-      // It's a real page link. Allow normal browser navigation.
-      // We can still trigger the click animation for visual feedback
-      $navLinks.removeClass('active text-aureus-blue').addClass('text-gray-600');
-      $(this).addClass('active text-aureus-blue').removeClass('text-gray-600');
-      gsap.fromTo(this, { scale: 0.92 }, { scale: 1, duration: 0.25, ease: 'back.out(2)' });
-      return; 
-    }
 
-    e.preventDefault();
-
+    // Update active state visually
     $navLinks
       .removeClass('active text-aureus-blue')
       .addClass('text-gray-600');
@@ -368,6 +359,13 @@ $(function () {
       .removeClass('text-gray-600');
 
     gsap.fromTo(this, { scale: 0.92 }, { scale: 1, duration: 0.25, ease: 'back.out(2)' });
+
+    // If it's a real page link (not anchor), navigate after brief animation
+    if (href && !href.startsWith('#')) {
+      e.preventDefault();
+      setTimeout(function () { window.location.href = href; }, 180);
+    }
+    // Anchor links (#something) fall through to smooth scroll handler below
   });
 
   /* ════════════════════════════════════════════════════
